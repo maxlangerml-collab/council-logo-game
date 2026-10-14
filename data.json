@@ -1,0 +1,3431 @@
+[
+ {
+  "img": "img/42884dcadec91377.png",
+  "reveal": "reveal/27a9c2c31a4746f1.png",
+  "name": "Newcastle-under-Lyme",
+  "official_name": "Newcastle-under-Lyme Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/6251c1715351f5e6.png",
+  "reveal": "reveal/bfd936a8d808c50e.png",
+  "name": "Haringey",
+  "official_name": "London Borough of Haringey",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/7fa48466900e3fe9.png",
+  "reveal": "reveal/89d887a3678c0c8f.png",
+  "name": "Melton",
+  "official_name": "Melton Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/e38cbbc1109d90c6.png",
+  "reveal": "reveal/96dfd2bdf7acd868.png",
+  "name": "Stafford",
+  "official_name": "Stafford Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/b926188f77b7b155.png",
+  "reveal": "reveal/6c52c0bff6e3a110.png",
+  "name": "North Warwickshire",
+  "official_name": "North Warwickshire Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/24580ec5ff6efaa4.png",
+  "reveal": "reveal/f1a8e0d1f53d6d79.png",
+  "name": "Fife",
+  "official_name": "Fife Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/1e028ada51d6eb01.png",
+  "reveal": "reveal/cf3e5d5ac2c3e4c6.png",
+  "name": "Liverpool",
+  "official_name": "Liverpool City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/7099278df078918e.png",
+  "reveal": "reveal/60441b3691bc269e.png",
+  "name": "Dacorum",
+  "official_name": "Dacorum Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/7003939214c5af76.png",
+  "reveal": "reveal/33db7c9db58e8089.png",
+  "name": "Test Valley",
+  "official_name": "Test Valley Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/6fa806c888148f08.png",
+  "reveal": "reveal/c1eb92a6957be7cb.png",
+  "name": "Oxford",
+  "official_name": "Oxford City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/4b36a6c8847d89e6.png",
+  "reveal": "reveal/b602cd5960e8b714.png",
+  "name": "Broxbourne",
+  "official_name": "Broxbourne Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/2a6e6bfdb14d743b.png",
+  "reveal": "reveal/d7f0b49629d353a9.png",
+  "name": "Lisburn and Castlereagh",
+  "official_name": "Lisburn and Castlereagh City Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/59e598de50cef442.png",
+  "reveal": "reveal/1b0bb19a7b75ab44.png",
+  "name": "Maldon",
+  "official_name": "Maldon District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9c009c23a41385e7.png",
+  "reveal": "reveal/c857203ba72b07a2.png",
+  "name": "West Lothian",
+  "official_name": "West Lothian Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/302206f0763920b1.png",
+  "reveal": "reveal/dcbe1c109f44798a.png",
+  "name": "Rotherham",
+  "official_name": "Rotherham Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/bbb0426a2d3a1fc4.png",
+  "reveal": "reveal/0374255f604b0a91.png",
+  "name": "Antrim and Newtownabbey",
+  "official_name": "Antrim and Newtownabbey Borough Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/84af21e5d82540df.png",
+  "reveal": "reveal/d26e37e3eda950df.png",
+  "name": "Isle of Anglesey",
+  "official_name": "Isle of Anglesey County Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/38aec31d8afa7c45.png",
+  "reveal": "reveal/d9f557300f3aaee6.png",
+  "name": "Barnet",
+  "official_name": "London Borough of Barnet",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/f3401b98ffb037f7.png",
+  "reveal": "reveal/7eb95bc0e1820cd2.png",
+  "name": "Watford",
+  "official_name": "Watford Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/fd986b55078cffc6.png",
+  "reveal": "reveal/1a38895940ebf5a4.png",
+  "name": "Dundee City",
+  "official_name": "Dundee City Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/73f8e448a1a40646.png",
+  "reveal": "reveal/067fa6fda0929176.png",
+  "name": "Reading",
+  "official_name": "Reading Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/ee4f20ea37cfbd31.png",
+  "reveal": "reveal/175db40fd3d9ded6.png",
+  "name": "Guildford",
+  "official_name": "Guildford Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/e7429f31a232518a.png",
+  "reveal": "reveal/4e259c9bf43607b8.png",
+  "name": "Warwick",
+  "official_name": "Warwick District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/240ebbacc9d864c0.png",
+  "reveal": "reveal/51e282ee18ac43fc.png",
+  "name": "South Cambridgeshire",
+  "official_name": "South Cambridgeshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/7045dbdb63470987.png",
+  "reveal": "reveal/b3415a3a88c81487.png",
+  "name": "South Hams",
+  "official_name": "South Hams District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/0edc44d43ad80db6.png",
+  "reveal": "reveal/5e26d99b67c9b239.png",
+  "name": "East Cambridgeshire",
+  "official_name": "East Cambridgeshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/00f5ca5a4cdf4392.png",
+  "reveal": "reveal/cf5d9ce31c8d6ff9.png",
+  "name": "Crawley",
+  "official_name": "Crawley Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/ca779d5ab0f09c74.png",
+  "reveal": "reveal/27dbceb7a34d279f.png",
+  "name": "Southend-on-Sea",
+  "official_name": "Southend-on-Sea Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/f420e3e85d6d1407.png",
+  "reveal": "reveal/d01a75ebe558c910.png",
+  "name": "Aberdeenshire",
+  "official_name": "Aberdeenshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/8f0510507bace6f7.png",
+  "reveal": "reveal/424cf5b8c6fb591e.png",
+  "name": "Enfield",
+  "official_name": "London Borough of Enfield",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/c9d50e6d52aacbf3.png",
+  "reveal": "reveal/67a0de93fbeb49be.png",
+  "name": "Mole Valley",
+  "official_name": "Mole Valley District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9eb5c751b0f7f560.png",
+  "reveal": "reveal/68da1678b11f379c.png",
+  "name": "Pembrokeshire",
+  "official_name": "Pembrokeshire County Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/4575b870dad01de3.png",
+  "reveal": "reveal/4be02a7abddbe37f.png",
+  "name": "Boston",
+  "official_name": "Boston Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f2d9b90ba225df5e.png",
+  "reveal": "reveal/c80976e42a69e96c.png",
+  "name": "Wandsworth",
+  "official_name": "London Borough of Wandsworth",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/44a66cafab28e33b.png",
+  "reveal": "reveal/25d9d7761abcb214.png",
+  "name": "Dudley",
+  "official_name": "Dudley Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/1a880722e32e3f26.png",
+  "reveal": "reveal/4b1cfb68c8a7e72d.png",
+  "name": "Hyndburn",
+  "official_name": "Hyndburn Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/58b6262b497d651d.png",
+  "reveal": "reveal/74d000b3cb53428a.png",
+  "name": "Surrey Heath",
+  "official_name": "Surrey Heath Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/d3fd0f377aef49c6.png",
+  "reveal": "reveal/1f9e451346d2bcec.png",
+  "name": "Rother",
+  "official_name": "Rother District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/a41444681eef7bf4.png",
+  "reveal": "reveal/0f478ebfbff61f0b.png",
+  "name": "Lambeth",
+  "official_name": "London Borough of Lambeth",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/13185e653e5c47a2.png",
+  "reveal": "reveal/8a7b9a7dea9b1906.png",
+  "name": "Hammersmith and Fulham",
+  "official_name": "London Borough of Hammersmith & Fulham",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/3b6b0b2f8bff9531.png",
+  "reveal": "reveal/414827dad47fcc8d.png",
+  "name": "Maidstone",
+  "official_name": "Maidstone Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/a18db41962e0ead5.png",
+  "reveal": "reveal/6fe30e75efa8fb9b.png",
+  "name": "Bournemouth, Christchurch and Poole",
+  "official_name": "Bournemouth, Christchurch and Poole Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/6b1e80ab895228c6.png",
+  "reveal": "reveal/31cc630454b5e557.png",
+  "name": "Birmingham",
+  "official_name": "Birmingham City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/1de2b3a3f943270a.png",
+  "reveal": "reveal/2c1ad2281a7c8ad2.png",
+  "name": "Ashford",
+  "official_name": "Ashford Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/dc7c06289dc3ba2c.png",
+  "reveal": "reveal/5f3f2c5cdd22685d.png",
+  "name": "Armagh City, Banbridge and Craigavon",
+  "official_name": "Armagh City, Banbridge and Craigavon Borough Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/4dc710bef1fa709b.png",
+  "reveal": "reveal/e6020c1d5d0c9130.png",
+  "name": "Brentwood",
+  "official_name": "Brentwood Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/715b1c318ae12ee6.png",
+  "reveal": "reveal/71b626c4502aab89.png",
+  "name": "Staffordshire Moorlands",
+  "official_name": "Staffordshire Moorlands District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/c633c9d9c7f5b347.png",
+  "reveal": "reveal/617d3502661a9004.png",
+  "name": "Shetland Islands",
+  "official_name": "Shetland Islands Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/4cc133064b7941ed.png",
+  "reveal": "reveal/91d26aa0f3e7ce38.png",
+  "name": "West Oxfordshire",
+  "official_name": "West Oxfordshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/41511d0380016dbc.png",
+  "reveal": "reveal/5127abc97005d45d.png",
+  "name": "North Norfolk",
+  "official_name": "North Norfolk District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/0e6865e7173ef184.png",
+  "reveal": "reveal/50e206a4735d2749.png",
+  "name": "Sevenoaks",
+  "official_name": "Sevenoaks District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/20e575fc1c7d5778.png",
+  "reveal": "reveal/b0baa45afec9c17a.png",
+  "name": "Bridgend",
+  "official_name": "Bridgend County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/2c7ecdba3f2ac452.png",
+  "reveal": "reveal/0af78bd7dfdf0934.png",
+  "name": "Flintshire",
+  "official_name": "Flintshire County Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/8b89abb1c315d316.png",
+  "reveal": "reveal/9ebd12908e349abb.png",
+  "name": "Cherwell",
+  "official_name": "Cherwell District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/b4603c5586e99460.png",
+  "reveal": "reveal/b74c54bec87c7e13.png",
+  "name": "North Northamptonshire",
+  "official_name": "North Northamptonshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/398849bbdeb78bb1.png",
+  "reveal": "reveal/bc8b690240a3046e.png",
+  "name": "Great Yarmouth",
+  "official_name": "Great Yarmouth Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f8f9a0adcb03221c.png",
+  "reveal": "reveal/23f37c5601b4fe46.png",
+  "name": "Cheltenham",
+  "official_name": "Cheltenham Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/8ce9a60f2adbdf0e.png",
+  "reveal": "reveal/5eb56c2a837fdbe3.png",
+  "name": "Forest of Dean",
+  "official_name": "Forest of Dean District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/686d52e07bca45e9.png",
+  "reveal": "reveal/a8ae1050f72ee101.png",
+  "name": "Tameside",
+  "official_name": "Tameside Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/7efd4033032d7e0a.png",
+  "reveal": "reveal/553f2a6a07707a50.png",
+  "name": "Rhondda Cynon Taff",
+  "official_name": "Rhondda Cynon Taf County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/2837243f5394528b.png",
+  "reveal": "reveal/6392e927dc20c118.png",
+  "name": "Tunbridge Wells",
+  "official_name": "Tunbridge Wells Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/b96940148435753c.png",
+  "reveal": "reveal/460b44de08e68e0a.png",
+  "name": "Medway",
+  "official_name": "Medway Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/b79b510a9f146f06.png",
+  "reveal": "reveal/2d958c21d1c5d2cf.png",
+  "name": "Darlington",
+  "official_name": "Darlington Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/e298258903235da5.png",
+  "reveal": "reveal/a88dffa3fb7f2a35.png",
+  "name": "Arun",
+  "official_name": "Arun District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/ebddc86c29ad7f1e.png",
+  "reveal": "reveal/3f594a080e1fbe79.png",
+  "name": "Clackmannanshire",
+  "official_name": "Clackmannanshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/4a2ce5c38c27564a.png",
+  "reveal": "reveal/0aa37d144db77f2b.png",
+  "name": "Eastbourne",
+  "official_name": "Eastbourne Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/62706cfd3ca5ccc8.png",
+  "reveal": "reveal/f271ef3221e3698c.png",
+  "name": "Slough",
+  "official_name": "Slough Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/896b6b22186baa06.png",
+  "reveal": "reveal/35f9db3382689b8a.png",
+  "name": "Malvern Hills",
+  "official_name": "Malvern Hills District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9ce358b5f80bc207.png",
+  "reveal": "reveal/0312a16a1b00b0f5.png",
+  "name": "Norfolk",
+  "official_name": "Norfolk County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/52cfdb6a7d7c5302.png",
+  "reveal": "reveal/d9de65faa3a9e019.png",
+  "name": "East Devon",
+  "official_name": "East Devon District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/34a03ad74a21a77e.png",
+  "reveal": "reveal/afaa9ae0869c0901.png",
+  "name": "Cannock Chase",
+  "official_name": "Cannock Chase District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/360ae08bb1fad494.png",
+  "reveal": "reveal/9fd9822a0cee7685.png",
+  "name": "Salford",
+  "official_name": "Salford City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/7fd014759484c3ab.png",
+  "reveal": "reveal/d7a10969bd9aca20.png",
+  "name": "Westmorland and Furness",
+  "official_name": "Westmorland and Furness Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/f03fbdb816ff59b1.png",
+  "reveal": "reveal/15d1676c3f74fab4.png",
+  "name": "Dorset Council",
+  "official_name": "Dorset Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/755d6a920e80239f.png",
+  "reveal": "reveal/10024d7fb060e944.png",
+  "name": "Caerphilly",
+  "official_name": "Caerphilly County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/685dbd419a9c4e2c.png",
+  "reveal": "reveal/79a0cac0fa02e5b1.png",
+  "name": "South Kesteven",
+  "official_name": "South Kesteven District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/651d8de74becb7bd.png",
+  "reveal": "reveal/42be890bc62f8bd9.png",
+  "name": "Spelthorne",
+  "official_name": "Spelthorne Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/4bf8da563924a5bb.png",
+  "reveal": "reveal/36dc603673012388.png",
+  "name": "Doncaster",
+  "official_name": "City of Doncaster Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/4c462a3c8b1dc87b.png",
+  "reveal": "reveal/0ae6fa5b8f031ca8.png",
+  "name": "East Lindsey",
+  "official_name": "East Lindsey District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/bfe077b46928f54b.png",
+  "reveal": "reveal/929b20a8cc5d039a.png",
+  "name": "Thanet",
+  "official_name": "Thanet District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/571bba92c5608ea1.png",
+  "reveal": "reveal/06e873adea737af9.png",
+  "name": "Bracknell Forest",
+  "official_name": "Bracknell Forest Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/7409f6dda239d7fb.png",
+  "reveal": "reveal/683e75b5df3129ba.png",
+  "name": "Nuneaton and Bedworth",
+  "official_name": "Nuneaton and Bedworth Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/ea5ab7e40d3a86f4.png",
+  "reveal": "reveal/6870b0f796c9f23b.png",
+  "name": "Huntingdonshire",
+  "official_name": "Huntingdonshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/abb916806947f459.png",
+  "reveal": "reveal/5811ff4b8e102dea.png",
+  "name": "Mid and East Antrim",
+  "official_name": "Mid and East Antrim Borough Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/29a62b2ec99ef871.png",
+  "reveal": "reveal/e2db08bd4ab56125.png",
+  "name": "Southampton",
+  "official_name": "Southampton City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/fd0086800782e026.png",
+  "reveal": "reveal/9dfd46e805fe3827.png",
+  "name": "North Somerset",
+  "official_name": "North Somerset  Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/eab36f66645cd93e.png",
+  "reveal": "reveal/e9129fdd129c26dc.png",
+  "name": "Brent",
+  "official_name": "London Borough of Brent",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/94b9c3cf1477fe63.png",
+  "reveal": "reveal/34326d7a935fdbb8.png",
+  "name": "North West Leicestershire",
+  "official_name": "North West Leicestershire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/21ed910b1147fec8.png",
+  "reveal": "reveal/8f22427acefd3d32.png",
+  "name": "Castle Point",
+  "official_name": "Castle Point Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/98b31641905e1d9d.png",
+  "reveal": "reveal/8b12e5fa1ae92ef0.png",
+  "name": "Central Bedfordshire",
+  "official_name": "Central Bedfordshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/3827cadabd1cb2d4.png",
+  "reveal": "reveal/23ea04019b9628b8.png",
+  "name": "Lancaster",
+  "official_name": "Lancaster City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/7cd3995ab7171198.png",
+  "reveal": "reveal/7d909ba09eb62c7b.png",
+  "name": "Waltham Forest",
+  "official_name": "London Borough of Waltham Forest",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/498452cdb2f56be0.png",
+  "reveal": "reveal/047b8b58b3770fe8.png",
+  "name": "Perth and Kinross",
+  "official_name": "Perth and Kinross Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/9abc24a4e5f4cc90.png",
+  "reveal": "reveal/6ff586e22b0d4d5f.png",
+  "name": "Braintree",
+  "official_name": "Braintree District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f4dd9962bbf98bd5.png",
+  "reveal": "reveal/02a121654320f595.png",
+  "name": "High Peak",
+  "official_name": "High Peak Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/d526b03d78ab62b1.png",
+  "reveal": "reveal/6119f343bf76bc00.png",
+  "name": "Runnymede",
+  "official_name": "Runnymede Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/79b640201f1b9b88.png",
+  "reveal": "reveal/2be44cc4dacf6873.png",
+  "name": "Halton",
+  "official_name": "Halton Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/b5496067ad1bfff6.png",
+  "reveal": "reveal/d7b0f2c7a8bcaeb9.png",
+  "name": "Kingston upon Hull",
+  "official_name": "Hull City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/78ae39fb3dc5e20e.png",
+  "reveal": "reveal/78f4b80d120f9c51.png",
+  "name": "Havering",
+  "official_name": "London Borough of Havering",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/4a11122b52ae3afe.png",
+  "reveal": "reveal/51bbe4e5ca58d51a.png",
+  "name": "Fermanagh and Omagh",
+  "official_name": "Fermanagh and Omagh District Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/710dee1e0d6f5e2e.png",
+  "reveal": "reveal/d6a947e711279650.png",
+  "name": "Essex",
+  "official_name": "Essex County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/83723e628f5bad1d.png",
+  "reveal": "reveal/b5f0ed9394cff4e4.png",
+  "name": "Cambridgeshire",
+  "official_name": "Cambridgeshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/296b2c8fb8e7889d.png",
+  "reveal": "reveal/c9763ee5462ff2b9.png",
+  "name": "Breckland",
+  "official_name": "Breckland District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/5eb19b1d474acf57.png",
+  "reveal": "reveal/dc174cc3aaca70f8.png",
+  "name": "East Hertfordshire",
+  "official_name": "East Hertfordshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/31c98ff10c98b93e.png",
+  "reveal": "reveal/5c6d2a260afd883b.png",
+  "name": "Bedford",
+  "official_name": "Bedford Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/1a17abfaa93c354e.png",
+  "reveal": "reveal/652d4fbc55759a2f.png",
+  "name": "Pendle",
+  "official_name": "Pendle Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/08a673f9e4c0467d.png",
+  "reveal": "reveal/69ef62d5ad36b74b.png",
+  "name": "Cheshire West and Chester",
+  "official_name": "Cheshire West and Chester Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/6d5acfd3826410f3.png",
+  "reveal": "reveal/c600f69664d18b24.png",
+  "name": "East Sussex",
+  "official_name": "East Sussex County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/20b612a727579f73.png",
+  "reveal": "reveal/188d32f55209f204.png",
+  "name": "Stratford-on-Avon",
+  "official_name": "Stratford-on-Avon District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/2b9cf0016ed801f4.png",
+  "reveal": "reveal/6c6766cb0492a481.png",
+  "name": "Eilean Siar",
+  "official_name": "Comhairle nan Eilean Siar",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/657b18f6f3e55462.png",
+  "reveal": "reveal/35201ab8490647e1.png",
+  "name": "Hillingdon",
+  "official_name": "London Borough of Hillingdon",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/433bfd229ee9a79a.png",
+  "reveal": "reveal/0a1138cf6c0b5bf0.png",
+  "name": "York",
+  "official_name": "City of York Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/6e3c0307fcf9b17b.png",
+  "reveal": "reveal/923aff91e13ccf21.png",
+  "name": "Hertsmere",
+  "official_name": "Hertsmere Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/1f4905bf9e5381a2.png",
+  "reveal": "reveal/58d0bfbfafe8c55c.png",
+  "name": "The Scottish Borders",
+  "official_name": "Scottish Borders Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/0ce4a0b9cf8413ac.png",
+  "reveal": "reveal/1f574e1b76b037c5.png",
+  "name": "North Lanarkshire",
+  "official_name": "North Lanarkshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/1057ed745b2fc2e2.png",
+  "reveal": "reveal/d5ad37c96644f7df.png",
+  "name": "Chichester",
+  "official_name": "Chichester District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/1bf2c68c00a405d6.png",
+  "reveal": "reveal/335fe10c277377d0.png",
+  "name": "Hart",
+  "official_name": "Hart District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/3d75a9d8de4c0cdf.png",
+  "reveal": "reveal/fc91c4f07b89364c.png",
+  "name": "Ashfield",
+  "official_name": "Ashfield District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/becfab951b95d86a.png",
+  "reveal": "reveal/3d5801d89e400000.png",
+  "name": "Herefordshire",
+  "official_name": "Herefordshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/828d47896cce96af.png",
+  "reveal": "reveal/bd4aad9856fe9ee1.png",
+  "name": "Merthyr Tydfil",
+  "official_name": "Merthyr Tydfil County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/4af9cec165056eb2.png",
+  "reveal": "reveal/b8f61015f326aa26.png",
+  "name": "East Riding of Yorkshire",
+  "official_name": "East Riding of Yorkshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/ab4fa966c0ba985d.png",
+  "reveal": "reveal/6c664f828d485a92.png",
+  "name": "Tamworth",
+  "official_name": "Tamworth Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/54f383e8fcba3a54.png",
+  "reveal": "reveal/078712df47d0fd33.png",
+  "name": "Somerset",
+  "official_name": "Somerset Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/cbd2d3215992ad4c.png",
+  "reveal": "reveal/03b18c514cc782d1.png",
+  "name": "East Dunbartonshire",
+  "official_name": "East Dunbartonshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/55171dc5e1fb9ea1.png",
+  "reveal": "reveal/5844116772c8b4c4.png",
+  "name": "Lancashire",
+  "official_name": "Lancashire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/9b4e4b322eef54e1.png",
+  "reveal": "reveal/8aa69f3a1a09c63d.png",
+  "name": "Winchester",
+  "official_name": "Winchester City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/73b94934935e37c5.png",
+  "reveal": "reveal/6f433a5cdbfb7ced.png",
+  "name": "Isle of Wight",
+  "official_name": "Isle of Wight Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/3a842e17b357325b.png",
+  "reveal": "reveal/420c44efa70eb23f.png",
+  "name": "Gloucestershire",
+  "official_name": "Gloucestershire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/d39ed371d540fe45.png",
+  "reveal": "reveal/80a83464a5a5ee17.png",
+  "name": "South Staffordshire",
+  "official_name": "South Staffordshire Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/cdfe05e8caa4b643.png",
+  "reveal": "reveal/059a12a821aca632.png",
+  "name": "Suffolk",
+  "official_name": "Suffolk County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/5c3f2d911bdfd0bf.png",
+  "reveal": "reveal/1cc0c22aaab38af6.png",
+  "name": "North Devon",
+  "official_name": "North Devon District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/bc66e39eb77a8c2b.png",
+  "reveal": "reveal/b7c393d21e4698fc.png",
+  "name": "Derbyshire Dales",
+  "official_name": "Derbyshire Dales District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/40205bcc58176597.png",
+  "reveal": "reveal/ca81b1e332131c23.png",
+  "name": "Gwynedd",
+  "official_name": "Gwynedd Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/c628d29cb5dfb4f6.png",
+  "reveal": "reveal/99616ff1b2bbeb32.png",
+  "name": "Woking",
+  "official_name": "Woking Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/c759f2fdb91579e9.png",
+  "reveal": "reveal/d13e0c0f46238ff4.png",
+  "name": "Portsmouth",
+  "official_name": "Portsmouth City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/b3ed8e98567c0c38.png",
+  "reveal": "reveal/ca732575248e7b40.png",
+  "name": "West Lancashire",
+  "official_name": "West Lancashire Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f859bcfe104ca25b.png",
+  "reveal": "reveal/2c18dde1cd7ebaeb.png",
+  "name": "South Tyneside",
+  "official_name": "South Tyneside Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/bc9d300b2f157182.png",
+  "reveal": "reveal/537e3b06f3bd2b80.png",
+  "name": "Milton Keynes",
+  "official_name": "Milton Keynes Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/0ea4e831b514c17f.png",
+  "reveal": "reveal/17c161857bc43a3b.png",
+  "name": "Blaby",
+  "official_name": "Blaby District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/672e529638b41fb7.png",
+  "reveal": "reveal/c6b3597b308230c7.png",
+  "name": "Windsor and Maidenhead",
+  "official_name": "Royal Borough of Windsor and Maidenhead",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/f189ec4fbd8fb8e7.png",
+  "reveal": "reveal/2ec667e286a64745.png",
+  "name": "Exeter",
+  "official_name": "Exeter City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/cdf87a21d3181b6f.png",
+  "reveal": "reveal/b8bceca772b6087f.png",
+  "name": "The Vale of Glamorgan",
+  "official_name": "Vale of Glamorgan Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/ea41a7cc4b24a921.png",
+  "reveal": "reveal/fe39b263b3925c96.png",
+  "name": "West Sussex",
+  "official_name": "West Sussex County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/063aa3fa19b39f59.png",
+  "reveal": "reveal/87a7d73682882db7.png",
+  "name": "North Ayrshire",
+  "official_name": "North Ayrshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/6c772bf1648985aa.png",
+  "reveal": "reveal/cdc9d911801cc8ef.png",
+  "name": "Conwy",
+  "official_name": "Conwy County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/08d85e15c43d84d1.png",
+  "reveal": "reveal/e73d2844f9e3c831.png",
+  "name": "Calderdale",
+  "official_name": "Calderdale Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/a972c8367cbf1597.png",
+  "reveal": "reveal/dff58e423f2fc132.png",
+  "name": "Redditch",
+  "official_name": "Redditch Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/47b63e513a931f56.png",
+  "reveal": "reveal/0a5dbcbdc62d22fe.png",
+  "name": "Tendring",
+  "official_name": "Tendring District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/5d4154638c8a2d87.png",
+  "reveal": "reveal/cb0af1e9f38cb8a3.png",
+  "name": "Worcester",
+  "official_name": "Worcester City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/162b51107b608609.png",
+  "reveal": "reveal/59972f22bcb6e344.png",
+  "name": "East Ayrshire",
+  "official_name": "East Ayrshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/08c612e6829d253b.png",
+  "reveal": "reveal/b568b8ddcfe0f8f5.png",
+  "name": "Falkirk",
+  "official_name": "Falkirk Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/cac050cc52b93f83.png",
+  "reveal": "reveal/fde07b5d9e0c1967.png",
+  "name": "Buckinghamshire",
+  "official_name": "Buckinghamshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/d178fc762d3a6104.png",
+  "reveal": "reveal/13cacfa30bfa40f1.png",
+  "name": "Manchester",
+  "official_name": "Manchester City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/ede618bfc4a31ed7.png",
+  "reveal": "reveal/979c270b952f348f.png",
+  "name": "Oldham",
+  "official_name": "Oldham Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9529a9e6b4f61cce.png",
+  "reveal": "reveal/6324e05a5b23ecef.png",
+  "name": "Worcestershire",
+  "official_name": "Worcestershire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/5af236ac76135420.png",
+  "reveal": "reveal/488ec6834a3917ef.png",
+  "name": "Monmouthshire",
+  "official_name": "Monmouthshire County Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/bf7491fe25001fa0.png",
+  "reveal": "reveal/6a513076d12151f4.png",
+  "name": "Wealden",
+  "official_name": "Wealden District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/8a2df23f1d61bfec.png",
+  "reveal": "reveal/c65f35ff2c33c493.png",
+  "name": "Leicestershire",
+  "official_name": "Leicestershire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/8345825d2ab7c1f7.png",
+  "reveal": "reveal/265aeec37636d1ab.png",
+  "name": "Leeds",
+  "official_name": "Leeds City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f3c8d8bc924111a1.png",
+  "reveal": "reveal/d5ac597d2741ef3e.png",
+  "name": "Sandwell",
+  "official_name": "Sandwell Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9e3db00b5168fd37.png",
+  "reveal": "reveal/d830ba4f8ba89fc1.png",
+  "name": "Rugby",
+  "official_name": "Rugby Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/d71ff1b7b2f6fe74.png",
+  "reveal": "reveal/929185aadf8af57b.png",
+  "name": "St Albans",
+  "official_name": "St Albans City and District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/162e0396a37294b5.png",
+  "reveal": "reveal/33bc7c17da239db7.png",
+  "name": "Preston",
+  "official_name": "Preston City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/a6825b6417a187da.png",
+  "reveal": "reveal/a2314e4b8274dfcd.png",
+  "name": "Mid Sussex",
+  "official_name": "Mid Sussex District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/d7457f8443c94770.png",
+  "reveal": "reveal/5ddd912d1fbf2026.png",
+  "name": "Stirling",
+  "official_name": "Stirling Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/e5ddd1013940ca1c.png",
+  "reveal": "reveal/5829ecb75d6ab3d0.png",
+  "name": "Stroud",
+  "official_name": "Stroud District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/2f006ae4ee67178c.png",
+  "reveal": "reveal/f57550d244248044.png",
+  "name": "Southwark",
+  "official_name": "London Borough of Southwark",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/f76c2fa81f50ed21.png",
+  "reveal": "reveal/2fcb996a6b359f56.png",
+  "name": "Oadby and Wigston",
+  "official_name": "Oadby and Wigston Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/762c4fc9b023881c.png",
+  "reveal": "reveal/d48ab2bbb8888591.png",
+  "name": "Kensington and Chelsea",
+  "official_name": "Royal Borough of Kensington and Chelsea",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/1265e6f968002a35.png",
+  "reveal": "reveal/af43b30c8c5dd9e2.png",
+  "name": "Brighton and Hove",
+  "official_name": "Brighton and Hove City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/2072436cf3d2ba2f.png",
+  "reveal": "reveal/16788a56e1440fff.png",
+  "name": "Nottingham",
+  "official_name": "Nottingham City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/c11fde5784b66f48.png",
+  "reveal": "reveal/9b4cdae7680a0e82.png",
+  "name": "Newcastle upon Tyne",
+  "official_name": "Newcastle City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/ca8447f2b6feb3a0.png",
+  "reveal": "reveal/452fc614c3ba2497.png",
+  "name": "Surrey",
+  "official_name": "Surrey County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/850338cf097233ac.png",
+  "reveal": "reveal/b85344643ead0d41.png",
+  "name": "Mid Suffolk",
+  "official_name": "Mid Suffolk District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/6ecb70f089f1e096.png",
+  "reveal": "reveal/8c0ff65ff1a47c8b.png",
+  "name": "Horsham",
+  "official_name": "Horsham District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/0854bfa8bdb69abc.png",
+  "reveal": "reveal/76011c73b8c51902.png",
+  "name": "Fenland",
+  "official_name": "Fenland District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f7e4a07a4162e0fe.png",
+  "reveal": "reveal/4b1c52a6e44790c7.png",
+  "name": "Colchester",
+  "official_name": "Colchester Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f829c9f4748e26c1.png",
+  "reveal": "reveal/2c2de07c722e7f55.png",
+  "name": "Ipswich",
+  "official_name": "Ipswich Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/c23a5bf46cf74c40.png",
+  "reveal": "reveal/5edf3f4412b7a0b1.png",
+  "name": "Northumberland",
+  "official_name": "Northumberland County Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/ab31cccc73341e1f.png",
+  "reveal": "reveal/0646fe9b30361d7e.png",
+  "name": "West Dunbartonshire",
+  "official_name": "West Dunbartonshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/60c70ffb767b5cb9.png",
+  "reveal": "reveal/90b10134d8dd66a3.png",
+  "name": "Gedling",
+  "official_name": "Gedling Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/bdc4dbaa9ed3a3d7.png",
+  "reveal": "reveal/81a38cff45c4956d.png",
+  "name": "Wyre",
+  "official_name": "Wyre Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/c24c28727919234f.png",
+  "reveal": "reveal/88fa40a0a8a1b529.png",
+  "name": "East Lothian",
+  "official_name": "East Lothian Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/bfa9777cbcc15ccf.png",
+  "reveal": "reveal/4f85230a2736725f.png",
+  "name": "Kirklees",
+  "official_name": "Kirklees Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/58418d9a9900fe1f.png",
+  "reveal": "reveal/d23512a5992cf490.png",
+  "name": "Redbridge",
+  "official_name": "London Borough of Redbridge",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/ea4c87220aed4e5e.png",
+  "reveal": "reveal/bfbee89f85ba05ea.png",
+  "name": "Mid Devon",
+  "official_name": "Mid Devon District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/263a11671c8bf87f.png",
+  "reveal": "reveal/a7b1623ef3a9f964.png",
+  "name": "Elmbridge",
+  "official_name": "Elmbridge Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/91d62da223611c84.png",
+  "reveal": "reveal/a2eaf0df6152bc85.png",
+  "name": "Wakefield",
+  "official_name": "Wakefield Metropolitan District Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/65285664c0935808.png",
+  "reveal": "reveal/7c240565f1b4eec0.png",
+  "name": "Mansfield",
+  "official_name": "Mansfield District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/e8706ba9260dce47.png",
+  "reveal": "reveal/e65761d84e97b5a1.png",
+  "name": "Islington",
+  "official_name": "London Borough of Islington",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/61de5113b897fef6.png",
+  "reveal": "reveal/2c488681c22fb7f6.png",
+  "name": "Ealing",
+  "official_name": "London Borough of Ealing",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/6bd89b7a8fc9a37f.png",
+  "reveal": "reveal/fa4ee2643ef5e6bb.png",
+  "name": "South Gloucestershire",
+  "official_name": "South Gloucestershire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/7badc264c2f827c0.png",
+  "reveal": "reveal/ccb60fcd01f8eef4.png",
+  "name": "Epping Forest",
+  "official_name": "Epping Forest District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/030d16331f37d12f.png",
+  "reveal": "reveal/86964ec6710a1586.png",
+  "name": "East Renfrewshire",
+  "official_name": "East Renfrewshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/86b39e70760f0a46.png",
+  "reveal": "reveal/acc47c9090245a17.png",
+  "name": "Renfrewshire",
+  "official_name": "Renfrewshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/8ada0ea0817b1a0f.png",
+  "reveal": "reveal/cf3e7b7ba1fcf0b7.png",
+  "name": "Three Rivers",
+  "official_name": "Three Rivers District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9a7dfc6eb5cb367d.png",
+  "reveal": "reveal/482ca21ffe3801f0.png",
+  "name": "Warwickshire",
+  "official_name": "Warwickshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/623b5fc3d4d9821a.png",
+  "reveal": "reveal/6a9cbec8d202c8fa.png",
+  "name": "Lewisham",
+  "official_name": "London Borough of Lewisham",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/bd5d72831963b609.png",
+  "reveal": "reveal/e8582e36e72f8189.png",
+  "name": "Wychavon",
+  "official_name": "Wychavon District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9651e1e8e0339d3c.png",
+  "reveal": "reveal/bcdda7772c7abe09.png",
+  "name": "Plymouth",
+  "official_name": "Plymouth City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/09cba82373cbfb50.png",
+  "reveal": "reveal/ca37d14005604ab7.png",
+  "name": "East Hampshire",
+  "official_name": "East Hampshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/2bc3e2c9132627f9.png",
+  "reveal": "reveal/ff55f4e99c93fbae.png",
+  "name": "Chesterfield",
+  "official_name": "Chesterfield Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/a076c8a09ddc4ec6.png",
+  "reveal": "reveal/a586f7f12c8a8599.png",
+  "name": "New Forest",
+  "official_name": "New Forest District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/75d4586694436df5.png",
+  "reveal": "reveal/c769df9215f213b1.png",
+  "name": "Hackney",
+  "official_name": "London Borough of Hackney",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/e6364c7a0385efae.png",
+  "reveal": "reveal/7738aee4e55b5228.png",
+  "name": "Glasgow City",
+  "official_name": "Glasgow City Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/ff8f759ec98aca03.png",
+  "reveal": "reveal/32d4813d0bec6eae.png",
+  "name": "Hartlepool",
+  "official_name": "Hartlepool Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/796511f8e454f4bf.png",
+  "reveal": "reveal/853ec74c9ccfe42e.png",
+  "name": "Stockton-on-Tees",
+  "official_name": "Stockton-on-Tees Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/434e821b446a1794.png",
+  "reveal": "reveal/de0bba41b0a297a8.png",
+  "name": "Solihull",
+  "official_name": "Solihull Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/1ae6742552c7cc55.png",
+  "reveal": "reveal/c67fe8537c5c62c8.png",
+  "name": "Epsom and Ewell",
+  "official_name": "Epsom and Ewell Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/e2054b7205ddf550.png",
+  "reveal": "reveal/9f3e79230b963e2a.png",
+  "name": "Kingston upon Thames",
+  "official_name": "Royal Borough of Kingston upon Thames",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/89345f8497bf92bc.png",
+  "reveal": "reveal/a3219347fbaf5c17.png",
+  "name": "Rochford",
+  "official_name": "Rochford District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/0577fd06709f3995.png",
+  "reveal": "reveal/a764f4c68d7a0d82.png",
+  "name": "South Ayrshire",
+  "official_name": "South Ayrshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/d620ec3f9a3296f4.png",
+  "reveal": "reveal/aa770e16664cdf89.png",
+  "name": "Bromley",
+  "official_name": "London Borough of Bromley",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/4bd728351ad96f96.png",
+  "reveal": "reveal/c18b03b6bf1bb157.png",
+  "name": "Fareham",
+  "official_name": "Fareham Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f9eacaf551acb862.png",
+  "reveal": "reveal/f34d8d5de5850bde.png",
+  "name": "St. Helens",
+  "official_name": "St Helens Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/b99cb8eb0a221eca.png",
+  "reveal": "reveal/39dcc1b2caf82e78.png",
+  "name": "Argyll and Bute",
+  "official_name": "Argyll and Bute Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/89f756c390ee1568.png",
+  "reveal": "reveal/332ca55c290a0a11.png",
+  "name": "City of Bristol",
+  "official_name": "Bristol City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/c1e975f5dcb7edd3.png",
+  "reveal": "reveal/15b7037643b77668.png",
+  "name": "Sheffield",
+  "official_name": "Sheffield City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/83abd958c1979b3e.png",
+  "reveal": "reveal/f5324116e39cf1cf.png",
+  "name": "Ceredigion",
+  "official_name": "Ceredigion County Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/0fec8f5756ed09f6.png",
+  "reveal": "reveal/a5244a741dda69d3.png",
+  "name": "Chelmsford",
+  "official_name": "Chelmsford City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/94ff1f7a1ceb1918.png",
+  "reveal": "reveal/8b598c7e685e44df.png",
+  "name": "Devon",
+  "official_name": "Devon County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/00c93c4072b42bc4.png",
+  "reveal": "reveal/da531837eafad8e3.png",
+  "name": "Bradford",
+  "official_name": "City of Bradford Metropolitan District Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/5eb0ac81e87511d4.png",
+  "reveal": "reveal/a54912ca722beea3.png",
+  "name": "Derry City and Strabane",
+  "official_name": "Derry City and Strabane District Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f777a03e8f980e6c.png",
+  "reveal": "reveal/901c032566a126e0.png",
+  "name": "Dartford",
+  "official_name": "Dartford Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/be11da1614a51af3.png",
+  "reveal": "reveal/adae7cc1ee30eb15.png",
+  "name": "Newport",
+  "official_name": "Newport City Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/cd1791e8b5c1836b.png",
+  "reveal": "reveal/72beae17d3fc7a72.png",
+  "name": "Norwich",
+  "official_name": "Norwich City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/71a2274e699f3652.png",
+  "reveal": "reveal/484d7a22469656ad.png",
+  "name": "Highland",
+  "official_name": "The Highland Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/8b8f8166b6de6037.png",
+  "reveal": "reveal/681e263f2be96490.png",
+  "name": "Bury",
+  "official_name": "Bury Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/78a8f109fea8f209.png",
+  "reveal": "reveal/72ef597db936483f.png",
+  "name": "Tandridge",
+  "official_name": "Tandridge District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/c8cd6022c0b39245.png",
+  "reveal": "reveal/3648a83f2c4fedd6.png",
+  "name": "Blackburn with Darwen",
+  "official_name": "Blackburn with Darwen Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/fca6e8d5ad79c58e.png",
+  "reveal": "reveal/e79a8fd125ac6645.png",
+  "name": "Mid Ulster",
+  "official_name": "Mid Ulster District Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/553b48f5f89af49c.png",
+  "reveal": "reveal/28b17a77909c4563.png",
+  "name": "Hampshire",
+  "official_name": "Hampshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/c5e6b25747f659ed.png",
+  "reveal": "reveal/aff22f0d1f549fe7.png",
+  "name": "Dover",
+  "official_name": "Dover District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/3ccec0f71fc71b9a.png",
+  "reveal": "reveal/ea5e8b08e05c947e.png",
+  "name": "Swindon",
+  "official_name": "Swindon Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/30c33f2b8f5916da.png",
+  "reveal": "reveal/b1d065f9438a6b54.png",
+  "name": "Coventry",
+  "official_name": "Coventry City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/ae2d523a4a888fb9.png",
+  "reveal": "reveal/08cb0a1046612c53.png",
+  "name": "Harrow",
+  "official_name": "London Borough of Harrow",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/6a55d99fcd617717.png",
+  "reveal": "reveal/162985d6f0de03a3.png",
+  "name": "Leicester",
+  "official_name": "Leicester City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/297973c6b95db852.png",
+  "reveal": "reveal/7af75b42611f77ba.png",
+  "name": "Hinckley and Bosworth",
+  "official_name": "Hinckley and Bosworth Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/078d474e84ca05e2.png",
+  "reveal": "reveal/b704dd73428ae854.png",
+  "name": "Hounslow",
+  "official_name": "London Borough of Hounslow",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/ef8d83b452dae56b.png",
+  "reveal": "reveal/47619c0eb920c09e.png",
+  "name": "Reigate and Banstead",
+  "official_name": "Reigate and Banstead Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f4fffe02a955f156.png",
+  "reveal": "reveal/1e660d3bdc941a59.png",
+  "name": "Powys",
+  "official_name": "Powys County Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/b17696574f140bdc.png",
+  "reveal": "reveal/b6ab27e82563cca3.png",
+  "name": "Swansea",
+  "official_name": "City and County of Swansea Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/85869678b865ccf6.png",
+  "reveal": "reveal/b7763cd66237665e.png",
+  "name": "North Kesteven",
+  "official_name": "North Kesteven District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/22d213ecc59352c2.png",
+  "reveal": "reveal/109022f9ec582cb1.png",
+  "name": "Gloucester",
+  "official_name": "Gloucester City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/5cf1f9a0ce9dde0c.png",
+  "reveal": "reveal/c5a238117500f16b.png",
+  "name": "Westminster",
+  "official_name": "City of Westminster",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/fe9e6f35429eb688.png",
+  "reveal": "reveal/4c38035b362da6c1.png",
+  "name": "Aberdeen City",
+  "official_name": "Aberdeen City Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/477ed59757dfd516.png",
+  "reveal": "reveal/bd8e0e0251b13433.png",
+  "name": "Bromsgrove",
+  "official_name": "Bromsgrove District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/18ebebf03eafc3ed.png",
+  "reveal": "reveal/fbfc7b1d7ea52ced.png",
+  "name": "Rushcliffe",
+  "official_name": "Rushcliffe Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/a8c59f7d5fc1a011.png",
+  "reveal": "reveal/c96f09a2832c7f90.png",
+  "name": "Neath Port Talbot",
+  "official_name": "Neath Port Talbot County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/f1b2c563ec94ff6a.png",
+  "reveal": "reveal/58743932c50ae91b.png",
+  "name": "North Yorkshire",
+  "official_name": "North Yorkshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/7a6b95210bd2f8b1.png",
+  "reveal": "reveal/44be45a64f004cf6.png",
+  "name": "South Derbyshire",
+  "official_name": "South Derbyshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/7f78ed68355eeb23.png",
+  "reveal": "reveal/916197a126462fa9.png",
+  "name": "Bolton",
+  "official_name": "Bolton Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/58af85954765c6e3.png",
+  "reveal": "reveal/1204aa19f6fb3c09.png",
+  "name": "Croydon",
+  "official_name": "London Borough of Croydon",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/73b694683ca694ba.png",
+  "reveal": "reveal/dfbf33459f824cd4.png",
+  "name": "Ribble Valley",
+  "official_name": "Ribble Valley Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/13e72724145bd6bb.png",
+  "reveal": "reveal/7c9311cde53882bf.png",
+  "name": "Redcar and Cleveland",
+  "official_name": "Redcar and Cleveland Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/fc30a51484851199.png",
+  "reveal": "reveal/66daa57856e6d813.png",
+  "name": "Torfaen",
+  "official_name": "Torfaen County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/411c56ba0234abe9.png",
+  "reveal": "reveal/84c4e7cd2c8b1461.png",
+  "name": "Angus",
+  "official_name": "Angus Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/1478df5e79d86fad.png",
+  "reveal": "reveal/75ddb28004aaa0e7.png",
+  "name": "Gravesham",
+  "official_name": "Gravesham Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/fa1676109eb2ed3f.png",
+  "reveal": "reveal/c17cb03a646e0ab3.png",
+  "name": "Gateshead",
+  "official_name": "Gateshead Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/3d0da1273df95b70.png",
+  "reveal": "reveal/3cb27714a80693fc.png",
+  "name": "Knowsley",
+  "official_name": "Knowsley Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/63783fa0b59b88fd.png",
+  "reveal": "reveal/9b1a8a732adad6d3.png",
+  "name": "North East Lincolnshire",
+  "official_name": "North East Lincolnshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/56d406cf1871862e.png",
+  "reveal": "reveal/78eb3f17a74da5b3.png",
+  "name": "Warrington",
+  "official_name": "Warrington Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/a7bffb993898119c.png",
+  "reveal": "reveal/35217e0f5fe79ab1.png",
+  "name": "Derbyshire",
+  "official_name": "Derbyshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/ba6f93f3615e9302.png",
+  "reveal": "reveal/daeefda92c6ed358.png",
+  "name": "Chorley",
+  "official_name": "Chorley Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/d873a4373d19ae3c.png",
+  "reveal": "reveal/16e2d1535d0ad9fb.png",
+  "name": "Stockport",
+  "official_name": "Stockport Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/8649738bde7c018b.png",
+  "reveal": "reveal/c68e7e5cd60f8988.png",
+  "name": "Oxfordshire",
+  "official_name": "Oxfordshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/b11c3a4db523a360.png",
+  "reveal": "reveal/88d8bdee6751027a.png",
+  "name": "Babergh",
+  "official_name": "Babergh District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/acf6218206c4cb19.png",
+  "reveal": "reveal/214ec6c81b3e3091.png",
+  "name": "City of London",
+  "official_name": "City of London Corporation",
+  "nation": "England",
+  "type": "City corporation",
+  "dark_background": false
+ },
+ {
+  "img": "img/9be30ef6aa6b99bf.png",
+  "reveal": "reveal/69c66ab367858ea7.png",
+  "name": "Erewash",
+  "official_name": "Erewash Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/2138b24e0b48f074.png",
+  "reveal": "reveal/28a832b28b67201f.png",
+  "name": "Newark and Sherwood",
+  "official_name": "Newark and Sherwood District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f340c9762171e0a3.png",
+  "reveal": "reveal/1fcc97710448d169.png",
+  "name": "Derby",
+  "official_name": "Derby City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/cc5bbef47c15e4ac.png",
+  "reveal": "reveal/16219f7e8dc548ca.png",
+  "name": "South Norfolk",
+  "official_name": "South Norfolk District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/6b7b8b1a72262726.png",
+  "reveal": "reveal/8ea59344e9cbe6eb.png",
+  "name": "Causeway Coast and Glens",
+  "official_name": "Causeway Coast and Glens Borough Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/7550f7202060a611.png",
+  "reveal": "reveal/ea2cfcc9a4ad4efb.png",
+  "name": "West Suffolk",
+  "official_name": "West Suffolk Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/225b66c0ba2946dd.png",
+  "reveal": "reveal/09b01a1a7f187494.png",
+  "name": "Bolsover",
+  "official_name": "Bolsover District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/554a97497371aef5.png",
+  "reveal": "reveal/f84b62348dc41eaa.png",
+  "name": "Cheshire East",
+  "official_name": "Cheshire East Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/494daf7ba12656a3.png",
+  "reveal": "reveal/14706b5d15622513.png",
+  "name": "Hastings",
+  "official_name": "Hastings Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/576d0da34e1c0108.png",
+  "reveal": "reveal/9e81b40855862a9a.png",
+  "name": "Middlesbrough",
+  "official_name": "Middlesbrough Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/47e13fd0913573e6.png",
+  "reveal": "reveal/9fcea331f56e3db3.png",
+  "name": "Adur",
+  "official_name": "Adur District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/fea1b3fb8f6cf169.png",
+  "reveal": "reveal/d2b6854447fe7e29.png",
+  "name": "Camden",
+  "official_name": "London Borough of Camden",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/f013d3c6df3d3587.png",
+  "reveal": "reveal/72e3f3287602f98f.png",
+  "name": "Shropshire",
+  "official_name": "Shropshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/b8445764b089ef06.png",
+  "reveal": "reveal/18dd6459492674d0.png",
+  "name": "Rossendale",
+  "official_name": "Rossendale Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/fe87ac1da43a6937.png",
+  "reveal": "reveal/4977bef5d2d57994.png",
+  "name": "Sefton",
+  "official_name": "Sefton Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/22ffd3554d2a9695.png",
+  "reveal": "reveal/9582a35e98f7b864.png",
+  "name": "Stevenage",
+  "official_name": "Stevenage Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/0a549a4381cc52c0.png",
+  "reveal": "reveal/f8981d903b2f286a.png",
+  "name": "Canterbury",
+  "official_name": "Canterbury City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/191b97dbd2df38b5.png",
+  "reveal": "reveal/9208f13d22c0286d.png",
+  "name": "Worthing",
+  "official_name": "Worthing Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9d1716ff65febf07.png",
+  "reveal": "reveal/b05a033d86c34107.png",
+  "name": "Walsall",
+  "official_name": "Walsall Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/fd06dd9cfa3063f7.png",
+  "reveal": "reveal/0bce66f2e409918b.png",
+  "name": "Vale of White Horse",
+  "official_name": "Vale of White Horse District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/8ae3047697f03f83.png",
+  "reveal": "reveal/bb62e34b77e62e6f.png",
+  "name": "Broxtowe",
+  "official_name": "Broxtowe Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/92c7fbddb368d35d.png",
+  "reveal": "reveal/8de4b5da85b96603.png",
+  "name": "Havant",
+  "official_name": "Havant Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/cb2ca95d8ea8b3cf.png",
+  "reveal": "reveal/f205404ca0afb0b1.png",
+  "name": "Charnwood",
+  "official_name": "Charnwood Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/62c75135a3472a61.png",
+  "reveal": "reveal/0b289b54e2014d51.png",
+  "name": "South Oxfordshire",
+  "official_name": "South Oxfordshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/06ef37b4562a9e1e.png",
+  "reveal": "reveal/1b15ea5d17797b59.png",
+  "name": "Lincolnshire",
+  "official_name": "Lincolnshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/f3f6e6bf3ed57163.png",
+  "reveal": "reveal/15750afc2c8c1ea0.png",
+  "name": "Richmond upon Thames",
+  "official_name": "London Borough of Richmond upon Thames",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/cd18b91f3e914b15.png",
+  "reveal": "reveal/38453e0e2c03e81d.png",
+  "name": "Burnley",
+  "official_name": "Burnley Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/a12ded25b82039f2.png",
+  "reveal": "reveal/28cc2a543dfe214d.png",
+  "name": "City of Edinburgh",
+  "official_name": "City of Edinburgh Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/ed90d18c74ef715f.png",
+  "reveal": "reveal/d543534ae608739e.png",
+  "name": "Gosport",
+  "official_name": "Gosport Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/d26be332af716aff.png",
+  "reveal": "reveal/ae79d39f17ae21ac.png",
+  "name": "Cambridge",
+  "official_name": "Cambridge City Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/47280fa6aa4da2b8.png",
+  "reveal": "reveal/776cf572e38f7877.png",
+  "name": "Barking and Dagenham",
+  "official_name": "London Borough of Barking and Dagenham",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/1ffcddcf14a6ff78.png",
+  "reveal": "reveal/121011d73ac6a7bd.png",
+  "name": "Wolverhampton",
+  "official_name": "City of Wolverhampton Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/4baf15b36365715a.png",
+  "reveal": "reveal/d9cca5fd3340b458.png",
+  "name": "Orkney Islands",
+  "official_name": "Orkney Islands Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/0cac330274e01f12.png",
+  "reveal": "reveal/4f266a6f10fbc66b.png",
+  "name": "Sutton",
+  "official_name": "London Borough of Sutton",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/e79b81ba9289635c.png",
+  "reveal": "reveal/6e09252fe050e123.png",
+  "name": "Fylde",
+  "official_name": "Fylde Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/97c72040fcfedae9.png",
+  "reveal": "reveal/cba37e38d95664b4.png",
+  "name": "Bath and North East Somerset",
+  "official_name": "Bath and North East Somerset Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/20e2b956be149637.png",
+  "reveal": "reveal/d22969dadf1bbde0.png",
+  "name": "Dumfries and Galloway",
+  "official_name": "Dumfries and Galloway Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": true
+ },
+ {
+  "img": "img/c528ee4abc8909ff.png",
+  "reveal": "reveal/b85fd79a896897e7.png",
+  "name": "Stoke-on-Trent",
+  "official_name": "Stoke-on-Trent City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/0ba91869ec826a01.png",
+  "reveal": "reveal/17770af66db6262b.png",
+  "name": "South Lanarkshire",
+  "official_name": "South Lanarkshire Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/56583e36625876ab.png",
+  "reveal": "reveal/f7aa6770781fd582.png",
+  "name": "West Lindsey",
+  "official_name": "West Lindsey District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9def03fbc1ff83ac.png",
+  "reveal": "reveal/ef6393e4ac8d6e0c.png",
+  "name": "Midlothian",
+  "official_name": "Midlothian Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/dabdd9ad78f5caa0.png",
+  "reveal": "reveal/0417b233ee1799fc.png",
+  "name": "Cotswold",
+  "official_name": "Cotswold District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/51f516ae2a3e3dab.png",
+  "reveal": "reveal/e8e0cae64a44f09d.png",
+  "name": "North Tyneside",
+  "official_name": "North Tyneside Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/bdf9ddd347573b65.png",
+  "reveal": "reveal/b114c01782226462.png",
+  "name": "South Holland",
+  "official_name": "South Holland District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/de9f3c619e1af58d.png",
+  "reveal": "reveal/2d442a199b8fbf9a.png",
+  "name": "Cardiff",
+  "official_name": "City of Cardiff Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/edfdec626c159217.png",
+  "reveal": "reveal/51a772a206902008.png",
+  "name": "Kent",
+  "official_name": "Kent County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/d6e0767a6f26eb5a.png",
+  "reveal": "reveal/575a305195701270.png",
+  "name": "Blackpool",
+  "official_name": "Blackpool Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/c6e95170e2044ce2.png",
+  "reveal": "reveal/3fbe5eca5318d177.png",
+  "name": "Broadland",
+  "official_name": "Broadland District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/2200b0d346544798.png",
+  "reveal": "reveal/2782f8d61c544b8e.png",
+  "name": "Folkestone and Hythe",
+  "official_name": "Folkestone and Hythe District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/0ba147dbe3c62d35.png",
+  "reveal": "reveal/9b6750a2922a5efd.png",
+  "name": "Newham",
+  "official_name": "London Borough of Newham",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/3d25a7c83b02698a.png",
+  "reveal": "reveal/16f5db92b0bdd76b.png",
+  "name": "Tonbridge and Malling",
+  "official_name": "Tonbridge and Malling Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/51945d4c4d19eb53.png",
+  "reveal": "reveal/b285c2340e6c9250.png",
+  "name": "Rochdale",
+  "official_name": "Rochdale Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/ac0fcdf5832a8051.png",
+  "reveal": "reveal/ae08c63ecda8cfc1.png",
+  "name": "West Northamptonshire",
+  "official_name": "West Northamptonshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/3b367b6cdc4e30eb.png",
+  "reveal": "reveal/c34ec02066f871bf.png",
+  "name": "North Hertfordshire",
+  "official_name": "North Hertfordshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9247a0ac1a155259.png",
+  "reveal": "reveal/d78b3bb1749f22b0.png",
+  "name": "Bexley",
+  "official_name": "London Borough of Bexley",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/3c08622627908c85.png",
+  "reveal": "reveal/6c54929662ff2448.png",
+  "name": "West Devon",
+  "official_name": "West Devon Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/c913596e51c75eaf.png",
+  "reveal": "reveal/5917ffba7467a5c2.png",
+  "name": "Rushmoor",
+  "official_name": "Rushmoor Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/3183c05ed3c07043.png",
+  "reveal": "reveal/5ab0b808832d11e9.png",
+  "name": "Wigan",
+  "official_name": "Wigan Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/4147c276a653e38a.png",
+  "reveal": "reveal/2b91fcae66ec7f32.png",
+  "name": "Wrexham",
+  "official_name": "Wrexham County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/174c3f61e6b7d124.png",
+  "reveal": "reveal/7845d981d1c9a7fb.png",
+  "name": "East Staffordshire",
+  "official_name": "East Staffordshire Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/734cea3f7ca146e5.png",
+  "reveal": "reveal/c72c42687a5d6db0.png",
+  "name": "Cornwall",
+  "official_name": "Cornwall Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/c9bdb742b54cf3c1.png",
+  "reveal": "reveal/e9623b40b701f980.png",
+  "name": "Eastleigh",
+  "official_name": "Eastleigh Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/861ee6a0a9ccc879.png",
+  "reveal": "reveal/3009ec44acf3f517.png",
+  "name": "Bassetlaw",
+  "official_name": "Bassetlaw District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/db60064306911cbf.png",
+  "reveal": "reveal/606784bf321a41ab.png",
+  "name": "Trafford",
+  "official_name": "Trafford Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/13dd6a136e6d20e2.png",
+  "reveal": "reveal/a3a9379146fda749.png",
+  "name": "Barnsley",
+  "official_name": "Barnsley Metropolitan Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/985e903e8caced2c.png",
+  "reveal": "reveal/9bcbaa56a46f034a.png",
+  "name": "Peterborough",
+  "official_name": "Peterborough City Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/3361c8f57c2fd930.png",
+  "reveal": "reveal/27977e28c88e599e.png",
+  "name": "Newry, Mourne and Down ",
+  "official_name": "Newry, Mourne and Down District Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/d2cf2ca6ea618fbf.png",
+  "reveal": "reveal/a9151c5c3ca31a91.png",
+  "name": "Waverley",
+  "official_name": "Waverley Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9bf4d6194e2b72b5.png",
+  "reveal": "reveal/4c20efd5f00ffb5c.png",
+  "name": "Moray",
+  "official_name": "The Moray Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/21916a26dd73b41a.png",
+  "reveal": "reveal/c3644e038c01588c.png",
+  "name": "Lichfield",
+  "official_name": "Lichfield District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/84a8196b942d6f1b.png",
+  "reveal": "reveal/cb575f5c0e91c857.png",
+  "name": "Telford and Wrekin",
+  "official_name": "Telford & Wrekin Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/db15cf6850b8e24e.png",
+  "reveal": "reveal/b03a2c0ea13e07d7.png",
+  "name": "Amber Valley",
+  "official_name": "Amber Valley Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/724efd9da356af66.png",
+  "reveal": "reveal/fd74c9866c490118.png",
+  "name": "Tower Hamlets",
+  "official_name": "London Borough of Tower Hamlets",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/3be83fa2c827ee9f.png",
+  "reveal": "reveal/ca2df78ea54dbd3e.png",
+  "name": "City of Lincoln",
+  "official_name": "City of Lincoln Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/f25209d4a698fc6c.png",
+  "reveal": "reveal/c7d81cc441057a19.png",
+  "name": "Nottinghamshire",
+  "official_name": "Nottinghamshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/bdb82b5aec52618f.png",
+  "reveal": "reveal/78966e8c1501bc12.png",
+  "name": "Isles of Scilly",
+  "official_name": "Council of the Isles of Scilly",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/2012ac4f85019840.png",
+  "reveal": "reveal/bacde449f43ed608.png",
+  "name": "North Lincolnshire",
+  "official_name": "North Lincolnshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/ba1c49ecd2c99bc4.png",
+  "reveal": "reveal/c8f647eaee5adbbd.png",
+  "name": "Luton",
+  "official_name": "Luton Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/c3b4c284ed1d5ea0.png",
+  "reveal": "reveal/cc60e05dc90edaee.png",
+  "name": "Blaenau Gwent",
+  "official_name": "Blaenau Gwent County Borough Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/2aa2c44a97abc8e1.png",
+  "reveal": "reveal/30978ff20301aa46.png",
+  "name": "Uttlesford",
+  "official_name": "Uttlesford District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/9f868bbbbdc2634c.png",
+  "reveal": "reveal/e361a18ebfdeb19b.png",
+  "name": "Greenwich",
+  "official_name": "Royal Borough of Greenwich",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/528668cee4c0d1d2.png",
+  "reveal": "reveal/ac5d440dee76bccd.png",
+  "name": "Belfast",
+  "official_name": "Belfast City Council",
+  "nation": "Northern Ireland",
+  "type": "NI district",
+  "dark_background": false
+ },
+ {
+  "img": "img/6533c5ebe71be103.png",
+  "reveal": "reveal/4f398c13dd089c57.png",
+  "name": "Merton",
+  "official_name": "London Borough of Merton",
+  "nation": "England",
+  "type": "London borough",
+  "dark_background": false
+ },
+ {
+  "img": "img/490cefcd519d6277.png",
+  "reveal": "reveal/7db5d08b314f8315.png",
+  "name": "South Ribble",
+  "official_name": "South Ribble Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/8adce811e662f510.png",
+  "reveal": "reveal/29f48d55efafdd71.png",
+  "name": "Swale",
+  "official_name": "Swale Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/e98e9ab4b48df960.png",
+  "reveal": "reveal/16bcf4573a3c592d.png",
+  "name": "Lewes",
+  "official_name": "Lewes District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/4e665a0ca6459913.png",
+  "reveal": "reveal/1aa2ba2aa2835c69.png",
+  "name": "Wyre Forest",
+  "official_name": "Wyre Forest District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/09bac6c4b3790f73.png",
+  "reveal": "reveal/ee7b7e2059472a50.png",
+  "name": "County Durham",
+  "official_name": "Durham County Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/c6ad3eb57a03f82d.png",
+  "reveal": "reveal/27034253b18ea140.png",
+  "name": "Staffordshire",
+  "official_name": "Staffordshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/0dcad9eff3517d0c.png",
+  "reveal": "reveal/1ae6fad1b0751911.png",
+  "name": "East Suffolk",
+  "official_name": "East Suffolk Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/aa4dc59c86f8084d.png",
+  "reveal": "reveal/7e1d78c1777f3ee1.png",
+  "name": "Harlow",
+  "official_name": "Harlow District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/d1cf77a22cf35622.png",
+  "reveal": "reveal/323d9077511e69d4.png",
+  "name": "West Berkshire",
+  "official_name": "West Berkshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/cd02b9e0b1570baf.png",
+  "reveal": "reveal/9b4f8bb1882f0531.png",
+  "name": "Welwyn Hatfield",
+  "official_name": "Welwyn Hatfield Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/5adea2a517ae91f0.png",
+  "reveal": "reveal/acacfdbad560cfd8.png",
+  "name": "Torbay",
+  "official_name": "Torbay Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/c6e80567a228542f.png",
+  "reveal": "reveal/ed3642835fc73975.png",
+  "name": "North East Derbyshire",
+  "official_name": "North East Derbyshire District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/49daf3040e9e8adb.png",
+  "reveal": "reveal/903357f1690f5284.png",
+  "name": "Torridge",
+  "official_name": "Torridge District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/fc4b149b7299e36b.png",
+  "reveal": "reveal/7ae45a4c82ccdcd8.png",
+  "name": "Wiltshire",
+  "official_name": "Wiltshire Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/1894d95374877133.png",
+  "reveal": "reveal/2a88e49047cdd3c7.png",
+  "name": "Teignbridge",
+  "official_name": "Teignbridge District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/0b1e49303589a4e2.png",
+  "reveal": "reveal/d23483f546bbbb5a.png",
+  "name": "Wokingham",
+  "official_name": "Wokingham Borough Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/4a01cb611968505f.png",
+  "reveal": "reveal/e673adcc74c02e48.png",
+  "name": "Denbighshire",
+  "official_name": "Denbighshire County Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/b5aac3ff745d0d69.png",
+  "reveal": "reveal/c23b0613b5dff0fb.png",
+  "name": "Basingstoke and Deane",
+  "official_name": "Basingstoke and Deane Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/ea8e25917bb3538a.png",
+  "reveal": "reveal/73baa78a09fc4915.png",
+  "name": "Harborough",
+  "official_name": "Harborough District Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/b9c5be4baaebf8ca.png",
+  "reveal": "reveal/d173c61c41413a77.png",
+  "name": "Wirral",
+  "official_name": "Wirral Borough Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/1a164b4d3c51ab80.png",
+  "reveal": "reveal/d62d559f30e53672.png",
+  "name": "Carmarthenshire",
+  "official_name": "Carmarthenshire County Council",
+  "nation": "Wales",
+  "type": "Welsh unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/79834416d65262ab.png",
+  "reveal": "reveal/3ad6270ee74fd433.png",
+  "name": "Hertfordshire",
+  "official_name": "Hertfordshire County Council",
+  "nation": "England",
+  "type": "County",
+  "dark_background": false
+ },
+ {
+  "img": "img/feb0f1296a636cd8.png",
+  "reveal": "reveal/13c4c9b2c79c7ad4.png",
+  "name": "Kings Lynn and West Norfolk",
+  "official_name": "Borough Council of Kings Lynn and West Norfolk",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": true
+ },
+ {
+  "img": "img/f517b91d9576f4a5.png",
+  "reveal": "reveal/e402d0ea3b03d4dc.png",
+  "name": "Basildon",
+  "official_name": "Basildon Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/af99d406876e4a71.png",
+  "reveal": "reveal/17fb1386f7dd6b9c.png",
+  "name": "Rutland",
+  "official_name": "Rutland County Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/005f7d4c4f444b5a.png",
+  "reveal": "reveal/0d00698926a6eaf4.png",
+  "name": "Thurrock",
+  "official_name": "Thurrock Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/e34aa7c9d0a71296.png",
+  "reveal": "reveal/f794ff5f73615bba.png",
+  "name": "Tewkesbury",
+  "official_name": "Tewkesbury Borough Council",
+  "nation": "England",
+  "type": "Non-metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/981cc59e9ea7d58e.png",
+  "reveal": "reveal/c9346159a86ebeb8.png",
+  "name": "Cumberland",
+  "official_name": "Cumberland Council",
+  "nation": "England",
+  "type": "Unitary authority",
+  "dark_background": false
+ },
+ {
+  "img": "img/33541acd85754dc9.png",
+  "reveal": "reveal/e08e46652f354740.png",
+  "name": "Sunderland",
+  "official_name": "Sunderland City Council",
+  "nation": "England",
+  "type": "Metropolitan district",
+  "dark_background": false
+ },
+ {
+  "img": "img/01e6d41b359b306f.png",
+  "reveal": "reveal/bbee6314d362fad3.png",
+  "name": "Inverclyde",
+  "official_name": "Inverclyde Council",
+  "nation": "Scotland",
+  "type": "Scottish unitary authority",
+  "dark_background": false
+ }
+]

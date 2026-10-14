@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which Council?</title>
+<style>
+  :root {
+    --bg: #f3f1ec; --surface: #ffffff; --ink: #1b1c1f; --muted: #6a6c72; --line: #dedbd3;
+    --accent: #1f5bd6; --accent-ink: #ffffff; --good: #16804a; --good-bg: #e3f4ea; --bad: #c2302b; --bad-bg: #fbe7e5;
+    --logo-card: #ffffff; --logo-dark: #26272b; --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141518; --surface: #1d1f23; --ink: #ececee; --muted: #9a9ca3; --line: #2e3036;
+      --accent: #5b8cff; --accent-ink: #0d0f14; --good: #4cc982; --good-bg: #173326; --bad: #ff7a72; --bad-bg: #3a1d1c;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; min-height: 100vh; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+  header.top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  header.top h1 { font-size: 20px; margin: 0; letter-spacing: -.01em; cursor: pointer; }
+  header.top h1 span { color: var(--accent); }
+  .stats { display: flex; gap: 14px; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .stats b { color: var(--ink); }
+  .screen { display: none; }
+  .screen.on { display: block; }
+
+  /* start */
+  .hero { text-align: center; padding: 16px 0 8px; }
+  .hero h2 { font-size: clamp(28px, 7vw, 40px); margin: 0 0 8px; letter-spacing: -.02em; }
+  .hero p { color: var(--muted); margin: 0 auto 24px; max-width: 30em; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; box-shadow: var(--shadow); }
+  .field + .field { margin-top: 18px; }
+  .label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+  .seg { display: flex; flex-wrap: wrap; gap: 8px; }
+  .seg button { flex: 1 1 auto; }
+  .opt { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; cursor: pointer; text-align: center; }
+  .opt small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .opt[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); background: var(--surface); }
+  .best { margin-top: 16px; color: var(--muted); font-size: 14px; text-align: center; }
+  .btn { font: inherit; font-weight: 600; border: 0; border-radius: 10px; padding: 12px 20px; cursor: pointer; background: var(--accent); color: var(--accent-ink); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn.block { display: block; width: 100%; margin-top: 18px; font-size: 17px; padding: 14px; }
+  .btn:focus-visible, .opt:focus-visible, .choice:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  /* play */
+  .progress { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; margin-bottom: 16px; }
+  .progress div { height: 100%; background: var(--accent); transition: width .3s; }
+  .logo { position: relative; background: var(--logo-card); border-radius: 14px; box-shadow: var(--shadow); border: 1px solid var(--line);
+          aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 24px; overflow: hidden; }
+  .logo.dark { background: var(--logo-dark); }
+  .logo img { position: absolute; inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); object-fit: contain; transition: opacity .2s; }
+  .logo img.loading { opacity: 0; }
+  .prompt { text-align: center; color: var(--muted); margin: 16px 0 12px; font-size: 15px; }
+  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 480px) { .choices { grid-template-columns: 1fr; } }
+  .choice { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 14px 40px;
+            text-align: left; cursor: pointer; position: relative; min-height: 54px; }
+  .choice:hover:not(:disabled) { border-color: var(--accent); }
+  .choice kbd { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font: 12px ui-monospace, monospace; color: var(--muted);
+                border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+  .choice.right { border-color: var(--good); background: var(--good-bg); }
+  .choice.wrong { border-color: var(--bad); background: var(--bad-bg); }
+  .choice:disabled { cursor: default; }
+  .typed { position: relative; }
+  .typed input { width: 100%; font: inherit; font-size: 17px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+  .typed input.shake { animation: shake .3s; border-color: var(--bad); }
+  @keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+  .sugg { list-style: none; margin: 6px 0 0; padding: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow);
+          position: absolute; left: 0; right: 0; z-index: 5; max-height: 280px; overflow: auto; }
+  .sugg:empty { display: none; }
+  .sugg li { padding: 9px 10px; border-radius: 6px; cursor: pointer; }
+  .sugg li.hi { background: var(--bg); }
+  .sugg li small { color: var(--muted); margin-left: 6px; }
+  .row { display: flex; gap: 10px; justify-content: space-between; margin-top: 12px; }
+  .feedback { margin-top: 14px; border-radius: 12px; padding: 14px 16px; display: none; }
+  .feedback.on { display: block; }
+  .feedback.good { background: var(--good-bg); }
+  .feedback.bad { background: var(--bad-bg); }
+  .feedback h3 { margin: 0 0 2px; font-size: 18px; }
+  .feedback.good h3 { color: var(--good); }
+  .feedback.bad h3 { color: var(--bad); }
+  .feedback p { margin: 0; color: var(--muted); font-size: 14px; }
+  .feedback .btn { margin-top: 12px; width: 100%; }
+
+  /* end */
+  .score-big { text-align: center; padding: 8px 0 20px; }
+  .score-big .n { font-size: 64px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
+  .score-big .n span { color: var(--muted); font-size: 32px; }
+  .score-big p { color: var(--muted); margin: 8px 0 0; }
+  .recap { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 8px 0 20px; }
+  .recap div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font-size: 13px; }
+  .recap .thumb { background: var(--logo-card); border-radius: 6px; height: 80px; display: grid; place-items: center; padding: 6px; margin-bottom: 6px; }
+  .recap .thumb.dark { background: var(--logo-dark); }
+  .recap img { max-width: 100%; max-height: 68px; object-fit: contain; }
+  .recap .ok { color: var(--good); font-weight: 600; }
+  .recap .no { color: var(--bad); font-weight: 600; }
+  .recap .guess { color: var(--muted); display: block; }
+  .end-actions { display: flex; gap: 10px; }
+  .end-actions .btn { flex: 1; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1 id="home">Which <span>Council?</span></h1>
+    <div class="stats" id="stats" hidden>
+      <span>Q <b id="qn">1</b>/<span id="qt">10</span></span>
+      <span>Score <b id="sc">0</b></span>
+      <span>Streak <b id="st">0</b></span>
+    </div>
+  </header>
+
+  <!-- start -->
+  <section class="screen on" id="s-start">
+    <div class="hero">
+      <h2>Name the council from its logo</h2>
+      <p>The place names have been blacked out. Ten logos per round, from <span id="total">all</span> UK local authorities.</p>
+    </div>
+    <div class="panel">
+      <div class="field">
+        <div class="label">Mode</div>
+        <div class="seg" id="mode">
+          <button class="opt" data-v="easy" aria-pressed="true">Easy<small>Pick from 4</small></button>
+          <button class="opt" data-v="hard" aria-pressed="false">Hard<small>Type the name</small></button>
+        </div>
+      </div>
+      <div class="field">
+        <div class="label">Region</div>
+        <div class="seg" id="region">
+          <button class="opt" data-v="all" aria-pressed="true">All UK</button>
+          <button class="opt" data-v="England" aria-pressed="false">England</button>
+          <button class="opt" data-v="Scotland" aria-pressed="false">Scotland</button>
+          <button class="opt" data-v="Wales" aria-pressed="false">Wales</button>
+          <button class="opt" data-v="Northern Ireland" aria-pressed="false">N. Ireland</button>
+        </div>
+      </div>
+      <button class="btn block" id="start">Start round</button>
+      <div class="best" id="best"></div>
+    </div>
+  </section>
+
+  <!-- play -->
+  <section class="screen" id="s-play">
+    <div class="progress"><div id="bar"></div></div>
+    <div class="logo" id="logo"><img id="img" alt="Redacted council logo"></div>
+    <div class="prompt" id="prompt">Which council is this?</div>
+    <div class="choices" id="choices"></div>
+    <div class="typed" id="typed" hidden>
+      <input id="guess" type="text" autocomplete="off" spellcheck="false" placeholder="Start typing a council…" aria-label="Council name">
+      <ul class="sugg" id="sugg" role="listbox"></ul>
+      <div class="row">
+        <button class="btn ghost" id="skip">Give up</button>
+        <button class="btn" id="submit">Guess</button>
+      </div>
+    </div>
+    <div class="feedback" id="fb" aria-live="polite">
+      <h3 id="fb-h"></h3>
+      <p id="fb-p"></p>
+      <button class="btn" id="next">Next <small>(Enter)</small></button>
+    </div>
+  </section>
+
+  <!-- end -->
+  <section class="screen" id="s-end">
+    <div class="score-big">
+      <div class="n" id="final">0<span>/10</span></div>
+      <p id="verdict"></p>
+    </div>
+    <div class="recap" id="recap"></div>
+    <div class="end-actions">
+      <button class="btn ghost" id="settings">Change settings</button>
+      <button class="btn" id="again">Play again</button>
+    </div>
+  </section>
+</div>
+
+<script src="data.js"></script>
+<script>
+const ROUND = 10;
+const $ = (id) => document.getElementById(id);
+const ALL = window.LOGOS || [];
+const settings = { mode: 'easy', region: 'all' };
+let game = null;
+const seen = new Set();  // avoid repeats across rounds until the pool runs out
+
+const store = {
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+const norm = (s) => s.toLowerCase().replace(/&/g, 'and').replace(/^(the |city of |county of )/, '').replace(/[^a-z0-9]/g, '');
+const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pool = () => ALL.filter((l) => settings.region === 'all' || l.nation === settings.region);
+const bestKey = () => `wc-best-${settings.mode}-${settings.region}`;
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach((s) => s.classList.toggle('on', s.id === id));
+  $('stats').hidden = id !== 's-play';
+}
+
+// ----- start screen -----
+function bindSeg(id, key) {
+  $(id).addEventListener('click', (e) => {
+    const b = e.target.closest('.opt'); if (!b) return;
+    settings[key] = b.dataset.v;
+    $(id).querySelectorAll('.opt').forEach((o) => o.setAttribute('aria-pressed', o === b));
+    store.set('wc-settings', settings);
+    renderBest();
+  });
+}
+function applySettings() {
+  for (const [id, key] of [['mode', 'mode'], ['region', 'region']]) {
+    $(id).querySelectorAll('.opt').forEach((o) => o.setAttribute('aria-pressed', o.dataset.v === settings[key]));
+  }
+}
+function renderBest() {
+  const b = store.get(bestKey());
+  const n = pool().length;
+  $('total').textContent = settings.region === 'all' ? `all ${ALL.length}` : `${n} ${settings.region}`;
+  $('best').textContent = b != null ? `Your best here: ${b}/${ROUND}` : '';
+}
+
+// ----- round -----
+function startRound() {
+  const p = pool();
+  let fresh = shuffle(p.filter((l) => !seen.has(l.img)));
+  if (fresh.length < ROUND) { p.forEach((l) => seen.delete(l.img)); fresh = shuffle(p.slice()); }
+  game = { qs: fresh.slice(0, Math.min(ROUND, p.length)), i: 0, score: 0, streak: 0, answered: false, log: [] };
+  game.qs.forEach((q) => seen.add(q.img));
+  $('qt').textContent = game.qs.length;
+  show('s-play');
+  ask();
+}
+
+function ask() {
+  const q = game.qs[game.i];
+  game.answered = false;
+  $('qn').textContent = game.i + 1;
+  $('sc').textContent = game.score;
+  $('st').textContent = game.streak;
+  $('bar').style.width = (100 * game.i / game.qs.length) + '%';
+  $('logo').classList.toggle('dark', !!q.dark_background);
+  setImg(q.img);
+  const next = game.qs[game.i + 1];
+  if (next) new Image().src = next.img;  // preload
+  new Image().src = q.reveal;
+  $('fb').className = 'feedback';
+  $('prompt').textContent = 'Which council is this?';
+
+  if (settings.mode === 'easy') {
+    $('typed').hidden = true; $('choices').hidden = false;
+    const opts = shuffle([q, ...distractors(q)]);
+    $('choices').innerHTML = opts.map((o, i) =>
+      `<button class="choice" data-name="${esc(o.name)}"><kbd>${i + 1}</kbd>${esc(o.name)}</button>`).join('');
+  } else {
+    $('choices').hidden = true; $('typed').hidden = false;
+    $('guess').value = ''; $('guess').disabled = false; $('sugg').innerHTML = '';
+    $('skip').disabled = false; $('submit').disabled = false;
+    $('guess').focus();
+  }
+}
+
+function setImg(src) {
+  const img = $('img');
+  img.classList.add('loading');
+  img.onload = () => img.classList.remove('loading');
+  img.src = src;
+}
+
+function distractors(q) {
+  const others = ALL.filter((l) => l !== q);
+  const tiers = [
+    others.filter((l) => l.nation === q.nation && l.type === q.type),
+    others.filter((l) => l.nation === q.nation),
+    others,
+  ];
+  const picked = [];
+  for (const t of tiers) {
+    for (const l of shuffle(t.slice())) {
+      if (picked.length === 3) return picked;
+      if (!picked.includes(l)) picked.push(l);
+    }
+  }
+  return picked;
+}
+
+function answer(guessName) {
+  if (game.answered) return;
+  game.answered = true;
+  const q = game.qs[game.i];
+  const ok = guessName != null && (norm(guessName) === norm(q.name) || norm(guessName) === norm(q.official_name));
+  if (ok) { game.score++; game.streak++; } else { game.streak = 0; }
+  game.log.push({ q, guess: guessName, ok });
+  $('sc').textContent = game.score;
+  $('st').textContent = game.streak;
+  $('bar').style.width = (100 * (game.i + 1) / game.qs.length) + '%';
+
+  setImg(q.reveal);
+  if (settings.mode === 'easy') {
+    $('choices').querySelectorAll('.choice').forEach((b) => {
+      b.disabled = true;
+      if (b.dataset.name === q.name) b.classList.add('right');
+      else if (b.dataset.name === guessName) b.classList.add('wrong');
+    });
+  } else {
+    $('guess').disabled = true; $('sugg').innerHTML = '';
+    $('skip').disabled = true; $('submit').disabled = true;
+  }
+  $('prompt').textContent = '';
+  $('fb-h').textContent = ok ? (game.streak >= 3 ? `Correct! ${game.streak} in a row` : 'Correct!') : guessName == null ? `It was ${q.name}` : `No — it was ${q.name}`;
+  $('fb-p').textContent = `${q.official_name} · ${q.type} · ${q.nation}`;
+  $('fb').className = 'feedback on ' + (ok ? 'good' : 'bad');
+  $('next').textContent = game.i + 1 < game.qs.length ? 'Next' : 'See results';
+  $('next').focus();
+}
+
+function nextQ() {
+  if (!game || !game.answered) return;
+  game.i++;
+  if (game.i < game.qs.length) ask(); else finish();
+}
+
+function finish() {
+  const s = game.score, n = game.qs.length;
+  const prev = store.get(bestKey());
+  if (prev == null || s > prev) store.set(bestKey(), s);
+  $('final').innerHTML = `${s}<span>/${n}</span>`;
+  const pct = s / n;
+  let v = pct === 1 ? 'Perfect. You might work in local government.' : pct >= .7 ? 'Impressive civic knowledge.' : pct >= .4 ? 'Not bad — those crests are tricky.' : 'Plenty of councils left to learn.';
+  if (prev != null && s > prev) v += ' New best!';
+  $('verdict').textContent = v;
+  $('recap').innerHTML = game.log.map(({ q, guess, ok }) => `
+    <div>
+      <div class="thumb${q.dark_background ? ' dark' : ''}"><img src="${q.reveal}" alt="" loading="lazy"></div>
+      <span class="${ok ? 'ok' : 'no'}">${ok ? '✓' : '✗'} ${esc(q.name)}</span>
+      ${!ok ? `<span class="guess">${guess == null ? 'Gave up' : 'You said ' + esc(guess)}</span>` : ''}
+    </div>`).join('');
+  show('s-end');
+}
+
+// ----- typed mode: suggestions -----
+let hi = -1;
+function suggestions(text) {
+  const t = norm(text);
+  if (!t) return [];
+  const names = pool();
+  const starts = [], contains = [];
+  for (const l of names) {
+    const n = norm(l.name), o = norm(l.official_name);
+    if (n.startsWith(t)) starts.push(l);
+    else if (n.includes(t) || o.includes(t)) contains.push(l);
+  }
+  const by = (a, b) => a.name.localeCompare(b.name);
+  return [...starts.sort(by), ...contains.sort(by)].slice(0, 8);
+}
+function renderSugg() {
+  const list = suggestions($('guess').value);
+  if (hi >= list.length) hi = list.length - 1;
+  $('sugg').innerHTML = list.map((l, i) =>
+    `<li role="option" class="${i === hi ? 'hi' : ''}" data-name="${esc(l.name)}">${esc(l.name)}<small>${esc(l.nation)}</small></li>`).join('');
+}
+function submitTyped() {
+  const items = [...$('sugg').querySelectorAll('li')];
+  if (hi >= 0 && items[hi]) return answer(items[hi].dataset.name);
+  const v = $('guess').value.trim();
+  const exact = pool().find((l) => norm(l.name) === norm(v) || norm(l.official_name) === norm(v));
+  if (exact) return answer(exact.name);
+  if (items.length === 1) return answer(items[0].dataset.name);
+  const g = $('guess'); g.classList.remove('shake'); void g.offsetWidth; g.classList.add('shake');
+}
+$('guess').addEventListener('input', () => { hi = 0; renderSugg(); });
+$('guess').addEventListener('keydown', (e) => {
+  const n = $('sugg').children.length;
+  if (e.key === 'ArrowDown' && n) { hi = (hi + 1) % n; renderSugg(); e.preventDefault(); }
+  else if (e.key === 'ArrowUp' && n) { hi = (hi - 1 + n) % n; renderSugg(); e.preventDefault(); }
+  else if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); submitTyped(); }
+  else if (e.key === 'Escape') { $('sugg').innerHTML = ''; hi = -1; }
+});
+$('sugg').addEventListener('mousedown', (e) => {
+  const li = e.target.closest('li'); if (li) { e.preventDefault(); answer(li.dataset.name); }
+});
+$('submit').onclick = submitTyped;
+$('skip').onclick = () => answer(null);
+
+// ----- wiring -----
+$('choices').addEventListener('click', (e) => { const b = e.target.closest('.choice'); if (b) answer(b.dataset.name); });
+$('next').onclick = nextQ;
+$('start').onclick = startRound;
+$('again').onclick = startRound;
+$('settings').onclick = () => { renderBest(); show('s-start'); };
+$('home').onclick = () => { renderBest(); show('s-start'); };
+document.addEventListener('keydown', (e) => {
+  if (!$('s-play').classList.contains('on')) {
+    if (e.key === 'Enter' && $('s-end').classList.contains('on')) startRound();
+    return;
+  }
+  if (game.answered && e.key === 'Enter') { e.preventDefault(); nextQ(); return; }
+  if (!game.answered && settings.mode === 'easy' && /^[1-4]$/.test(e.key)) {
+    const b = $('choices').children[+e.key - 1]; if (b) answer(b.dataset.name);
+  }
+});
+
+Object.assign(settings, store.get('wc-settings') || {});
+applySettings();
+bindSeg('mode', 'mode');
+bindSeg('region', 'region');
+renderBest();
+if (!ALL.length) $('start').disabled = true, $('best').textContent = 'No logo data found — run tools/apply.py first.';
+</script>
+</body>
+</html>
