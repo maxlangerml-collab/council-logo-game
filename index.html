@@ -39,8 +39,8 @@
   .redact { display: inline-block; background: var(--purple); border-radius: 3px; vertical-align: baseline; }
 
   /* header band */
-  .band { background: var(--band); color: var(--band-ink); }
-  .band-inner { max-width: 640px; margin: 0 auto; padding: 14px 16px; }
+  .band { position: relative; overflow: hidden; background: var(--band); color: var(--band-ink); }
+  .band-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 14px 16px; }
   .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 32px; }
   .top h1 { font-size: 19px; font-weight: 800; margin: 0; letter-spacing: -.01em; cursor: pointer; white-space: nowrap; }
   .top h1 .redact { width: 2.2em; height: .78em; margin: 0 .22em; }
@@ -56,12 +56,19 @@
   .hero { display: none; padding: 20px 0 84px; }
   body[data-screen="start"] .hero { display: block; }
   .hero h2 { font-size: clamp(40px, 11vw, 68px); font-weight: 800; line-height: .98; letter-spacing: -.035em; margin: 0 0 18px; }
-  .hero h2 .redact { width: 3.1em; height: .74em; margin: 0 .12em; transform-origin: left center; animation: redact .7s cubic-bezier(.7, 0, .2, 1) .25s both; }
+  /* The headline bar slides open now and then to flash a council name, then slams shut */
+  .hero h2 .redact { position: relative; width: 3.1em; height: .74em; margin: 0 .12em; background: none; transform-origin: left center;
+                     animation: redact .7s cubic-bezier(.7, 0, .2, 1) .25s both; transition: width .4s cubic-bezier(.6, 0, .2, 1); }
+  .hero h2 .redact::before { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--purple); border-radius: 3px;
+                             transform-origin: left center; transition: transform .45s cubic-bezier(.7, 0, .2, 1); }
+  .hero h2 .redact.open::before { transform: scaleX(0); transform-origin: right center; }
+  .flap-text { position: absolute; left: .04em; bottom: -.2em; line-height: 1; white-space: nowrap; color: var(--white); }
   @keyframes redact { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @media (prefers-reduced-motion: reduce) { .hero h2 .redact { animation: none; } }
   .hero p { margin: 0; max-width: 32em; font-size: 18px; color: rgba(255, 255, 255, .88); }
+  .hero p .count { font-weight: 800; color: var(--white); font-variant-numeric: tabular-nums; }
 
-  .wrap { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+  .wrap { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
   body[data-screen="start"] .wrap { margin-top: -60px; }
   .screen { display: none; }
   .screen.on { display: block; }
@@ -160,6 +167,111 @@
   .secs-box span { color: var(--muted); }
   .stats .time b { display: inline-block; min-width: 3.2ch; }
   .stats .time.low { background: var(--purple); border-radius: 999px; padding: 0 9px; margin: 0 -9px; }
+
+
+  /* ----- home screen ----- */
+  /* Background: a redacted document drifting behind the headline */
+  .doc { position: absolute; inset: 0; display: none; pointer-events: none; overflow: hidden;
+         -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent 96%); mask-image: linear-gradient(to bottom, #000 35%, transparent 96%);
+         translate: calc(var(--px, 0) * -10px) calc(var(--py, 0) * -6px); transition: translate .8s cubic-bezier(.2, .8, .3, 1); }
+  body[data-screen="start"] .doc { display: block; }
+  /* A pool of plain blue behind the headline keeps the text clear of the moving bars */
+  body[data-screen="start"] .band::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 430px 75% at 50% 48%, var(--band) 55%, transparent 100%); }
+  .doc-row { position: absolute; left: 0; display: flex; gap: 12px; animation: doc-drift var(--dur, 100s) linear infinite; }
+  .doc-row:nth-child(even) { animation-direction: reverse; }
+  @keyframes doc-drift { to { transform: translateX(calc(-50% - 6px)); } }
+  .doc-row i { flex: none; height: 9px; border-radius: 2px; background: rgba(255, 255, 255, .085); }
+  .doc-row i.p { background: var(--purple); transform-origin: left center; animation: doc-redact 7s cubic-bezier(.7, 0, .2, 1) var(--dl, 0s) infinite; }
+  @keyframes doc-redact { 0%, 10% { transform: scaleX(0); } 20%, 78% { transform: scaleX(1); } 88%, 100% { transform: scaleX(0); } }
+
+  /* Floating answer cards either side of the headline on wide screens; they follow the mouse and flip to show the answer */
+  .floaters { --cw: clamp(140px, 12vw, 240px); position: absolute; inset: 0; z-index: 1; display: none; pointer-events: none; }
+  @media (min-width: 1100px) {
+    body[data-screen="start"] .floaters { display: block; }
+    body[data-screen="start"] .hero { padding-bottom: 110px; }
+  }
+  .floater { position: absolute; width: var(--cw); aspect-ratio: 4 / 3; perspective: 1000px; rotate: var(--rot);
+             translate: calc(var(--px, 0) * var(--d) * 22px) calc(var(--py, 0) * var(--d) * 14px);
+             transition: translate .6s cubic-bezier(.2, .8, .3, 1);
+             animation: fl-in 1s cubic-bezier(.2, 1.5, .4, 1) calc(.35s + var(--k) * .12s) both; }
+  @keyframes fl-in { from { opacity: 0; scale: .3; } }
+  .floater:nth-child(1) { --k: 0; --d: 1.4; --rot: -9deg; right: calc(50% + 350px); top: 7%; }
+  .floater:nth-child(2) { --k: 2; --d: .8; --rot: 6deg; right: calc(50% + 350px + var(--cw) * .5); top: 46%; }
+  .floater:nth-child(3) { --k: 1; --d: 1.1; --rot: 7deg; left: calc(50% + 350px); top: 11%; }
+  .floater:nth-child(4) { --k: 3; --d: 1.7; --rot: -5deg; left: calc(50% + 350px + var(--cw) * .45); top: 49%; }
+  .bob { position: absolute; inset: 0; animation: fl-bob 6s ease-in-out calc(var(--k) * -1.5s) infinite; }
+  @keyframes fl-bob { 50% { transform: translateY(-12px) rotate(1.5deg); } }
+  .flip { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .9s cubic-bezier(.3, 1.35, .5, 1); }
+  .flip.show { transform: rotateY(180deg); }
+  .face { position: absolute; inset: 0; overflow: hidden; border-radius: 14px; background: var(--white);
+          -webkit-backface-visibility: hidden; backface-visibility: hidden; box-shadow: 0 18px 40px -14px rgba(0, 0, 0, .6); }
+  .face.dark { background: var(--logo-dark); }
+  .face img { position: absolute; top: 12%; left: 10%; width: 80%; height: 76%; object-fit: contain; }
+  .face.back { transform: rotateY(180deg); }
+  .face.back img { top: 8%; height: 60%; }
+  .face .nm { position: absolute; left: 0; right: 0; bottom: 0; padding: 7px 10px 5px; background: var(--purple); color: var(--white);
+              font-weight: 800; font-size: 15px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Mode cards: a little moving picture of each mode, playing only on the chosen one */
+  #mode .opt { display: flex; flex-direction: column; align-items: center; gap: 2px; padding-top: 14px; border-width: 2px; }
+  .ico { position: relative; width: 46px; height: 30px; margin-bottom: 6px; }
+  .ico-easy { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .ico-easy i { border-radius: 3px; background: var(--line); animation: ico-pick 4s infinite; }
+  .ico-easy i:nth-child(2) { animation-delay: 2s; }
+  .ico-easy i:nth-child(3) { animation-delay: 3s; }
+  .ico-easy i:nth-child(4) { animation-delay: 1s; }
+  @keyframes ico-pick { 0%, 24%, 100% { background: var(--line); } 6%, 18% { background: var(--violet); } }
+  .ico-hard { border: 2px solid var(--line); border-radius: 6px; background: var(--surface); }
+  .ico-hard::before { content: "Wirral"; position: absolute; left: 5px; top: 50%; transform: translateY(-42%); font: 800 11px/1 var(--font); color: var(--ink);
+                      clip-path: inset(0 100% 0 0); animation: ico-type 3.2s steps(6, end) infinite; }
+  .ico-hard::after { content: ""; position: absolute; right: 5px; top: 6px; bottom: 6px; width: 2px; background: var(--purple); animation: a-blink .8s steps(1) infinite; }
+  @keyframes ico-type { 0% { clip-path: inset(0 100% 0 0); } 60%, 100% { clip-path: inset(0 0 0 0); } }
+  @property --tt { syntax: "<percentage>"; inherits: false; initial-value: 100%; }
+  .ico-trial { width: 30px; border-radius: 50%; background: conic-gradient(var(--purple) var(--tt), var(--line) 0);
+               -webkit-mask: radial-gradient(circle, transparent 50%, #000 52%); mask: radial-gradient(circle, transparent 50%, #000 52%);
+               animation: ico-drain 4s linear infinite; }
+  @keyframes ico-drain { from { --tt: 100%; } to { --tt: 0%; } }
+  #mode .opt[aria-pressed="false"] .ico, #mode .opt[aria-pressed="false"] .ico i,
+  #mode .opt[aria-pressed="false"] .ico::before, #mode .opt[aria-pressed="false"] .ico::after { animation-play-state: paused; }
+  /* The chosen mode gets a border that spins through the brand colours */
+  @property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+  #mode .opt[aria-pressed="true"] { border-color: transparent; animation: ang 3s linear infinite;
+    background: linear-gradient(var(--select-bg), var(--select-bg)) padding-box,
+                conic-gradient(from var(--ang), var(--purple), var(--violet), var(--blue), var(--violet), var(--purple)) border-box; }
+  @keyframes ang { to { --ang: 360deg; } }
+
+  /* Start button: a shine runs across it */
+  #start { position: relative; overflow: hidden; box-shadow: 0 12px 28px -12px rgba(153, 0, 153, .8); }
+  #start::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%); pointer-events: none;
+                  background: linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, .38) 50%, transparent 65%); animation: sheen 3.6s ease-in-out 1s infinite; }
+  @keyframes sheen { 0% { transform: translateX(-100%); } 40%, 100% { transform: translateX(100%); } }
+
+  /* Launch: three brand-colour bars sweep across, with a 3-2-1 for the time trial */
+  .curtain { position: fixed; inset: 0; z-index: 90; overflow: hidden; }
+  .curtain i { position: absolute; top: 0; bottom: 0; left: -20%; width: 140%; transform: translateX(-110%) skewX(-12deg); }
+  .curtain i:nth-child(1) { background: var(--violet); }
+  .curtain i:nth-child(2) { background: var(--blue); }
+  .curtain i:nth-child(3) { background: var(--purple); }
+  .curtain.cover i { animation: c-in .55s cubic-bezier(.75, 0, .25, 1) forwards; }
+  .curtain.cover i:nth-child(2) { animation-delay: .07s; }
+  .curtain.cover i:nth-child(3) { animation-delay: .14s; }
+  .curtain.uncover i { transform: translateX(0) skewX(-12deg); animation: c-out .55s cubic-bezier(.75, 0, .25, 1) forwards; }
+  .curtain.uncover i:nth-child(2) { animation-delay: .07s; }
+  .curtain.uncover i:nth-child(1) { animation-delay: .14s; }
+  @keyframes c-in { to { transform: translateX(0) skewX(-12deg); } }
+  @keyframes c-out { from { transform: translateX(0) skewX(-12deg); } to { transform: translateX(110%) skewX(-12deg); } }
+  .curtain b { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: var(--white);
+               font-size: clamp(120px, 36vmin, 440px); font-weight: 800; letter-spacing: -.05em; line-height: 1; }
+  .curtain b.pop { animation: c-pop .6s cubic-bezier(.2, 1.4, .4, 1); }
+  @keyframes c-pop { from { transform: scale(1.9); opacity: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .doc-row, .doc-row i.p, .floater, .bob, .ico, .ico i, .ico::before, .ico::after, #mode .opt[aria-pressed="true"], #start::after { animation: none; }
+    .doc-row i.p { transform: none; }
+    .ico-hard::before { clip-path: none; }
+    .flip, .hero h2 .redact, .hero h2 .redact::before { transition: none; }
+  }
 
   /* ----- attract screen for the touchscreen stand (?kiosk) ----- */
   @property --r { syntax: "<length>"; inherits: false; initial-value: 0px; }
@@ -278,6 +390,8 @@
 </head>
 <body data-screen="start">
 <header class="band">
+  <div class="doc" id="doc" aria-hidden="true"></div>
+  <div class="floaters" id="floaters" aria-hidden="true"></div>
   <div class="band-inner">
     <div class="top">
       <div class="brand-row">
@@ -292,7 +406,7 @@
       </div>
     </div>
     <div class="hero">
-      <h2>Which<span class="redact" aria-hidden="true"></span>Council?</h2>
+      <h2>Which<span class="redact" id="flap" aria-hidden="true"><span class="flap-text"></span></span>Council?</h2>
       <p>Every logo has its place name blacked out. Work out which council it belongs to, ten logos at a time or as many as you can against the clock. From <span id="total">all UK councils</span>.</p>
     </div>
   </div>
@@ -305,9 +419,9 @@
       <div class="field">
         <div class="label">Mode</div>
         <div class="seg" id="mode">
-          <button class="opt" data-v="easy" aria-pressed="true">Easy<small>Pick from 4</small></button>
-          <button class="opt" data-v="hard" aria-pressed="false">Hard<small>Type the name</small></button>
-          <button class="opt" data-v="trial" aria-pressed="false">Time trial<small>Type against the clock</small></button>
+          <button class="opt" data-v="easy" aria-pressed="true"><span class="ico ico-easy" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Easy<small>Pick from 4</small></button>
+          <button class="opt" data-v="hard" aria-pressed="false"><span class="ico ico-hard" aria-hidden="true"></span>Hard<small>Type the name</small></button>
+          <button class="opt" data-v="trial" aria-pressed="false"><span class="ico ico-trial" aria-hidden="true"></span>Time trial<small>Type against the clock</small></button>
         </div>
       </div>
       <div class="field" id="time-field" hidden>
@@ -376,6 +490,9 @@
   </section>
 </div>
 
+<!-- launch transition -->
+<div class="curtain" id="curtain" aria-hidden="true" hidden><i></i><i></i><i></i><b id="count"></b></div>
+
 <!-- attract screen: shown on the touchscreen stand (?kiosk) at start and after a minute without a touch -->
 <div class="attract" id="attract" role="button" tabindex="-1" aria-label="Touch to play Which Council?" hidden>
   <div class="a-wall" id="a-wall" aria-hidden="true"></div>
@@ -411,6 +528,9 @@ const KIOSK_SETTINGS = { mode: 'trial', region: 'England', tier: 'upper', second
 const picking = () => settings.mode === 'easy' || settings.pick;  // four options rather than typing
 const clampSecs = (v) => Math.min(600, Math.max(15, Math.round((+v || 60) / 5) * 5));
 let game = null;
+const calm = matchMedia('(prefers-reduced-motion: reduce)');
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+const preload = (src) => new Promise((r) => { const i = new Image(); i.onload = i.onerror = () => r(); i.src = src; });
 const seen = new Set();  // avoid repeats across rounds until the pool runs out
 
 const store = {
@@ -470,7 +590,7 @@ function applySettings() {
 function renderBest() {
   const b = store.get(bestKey());
   const trial = settings.mode === 'trial';
-  $('total').textContent = scopeText();
+  setTotal();
   updateAvailability();
   $('time-field').hidden = !trial;
   $('start').textContent = trial ? 'Start the clock' : 'Start round';
@@ -479,12 +599,56 @@ function renderBest() {
     : trial ? `Your best for ${settings.seconds} seconds here: <b>${plural(b, 'council')}</b>`
     : `Your best here: <b>${b} out of ${ROUND}</b>`;
 }
+// The council count rolls up to its new value whenever the choice changes
+let shownTotal = 0, countRun = 0;
+function setTotal() {
+  const n = pool().length, from = shownTotal, el = $('total');
+  shownTotal = n;
+  el.innerHTML = esc(scopeText()).replace(String(n), `<b class="count">${from}</b>`);
+  const b = el.querySelector('.count');
+  if (!b) return;
+  if (calm.matches || from === n) { b.textContent = n; return; }
+  const run = ++countRun, t0 = performance.now(), dur = 750;
+  (function step(now) {
+    if (run !== countRun) return;
+    const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+    b.textContent = Math.round(from + (n - from) * e);
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}
 function setSecs(v) {
   settings.seconds = clampSecs(v);
   $('secs').value = settings.seconds;
   store.set('wc-settings', settings);
   renderBest();
 }
+
+// ----- launch: bars sweep across, the round is built underneath, then a 3-2-1 for the time trial -----
+let curtain = Promise.resolve();
+function launch(go) {
+  const c = $('curtain');
+  if (!c.hidden) return;
+  if (calm.matches) { go(); return; }
+  const countdown = settings.mode === 'trial';
+  c.hidden = false; c.className = 'curtain cover';
+  curtain = (async () => {
+    await wait(700);
+    go();
+    if (countdown) {
+      for (const n of ['3', '2', '1', 'Go!']) {
+        const b = $('count');
+        b.textContent = n; b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop');
+        await wait(n === 'Go!' ? 450 : 650);
+      }
+    }
+    $('count').textContent = '';
+    c.className = 'curtain uncover';
+    await wait(700);
+    c.hidden = true; c.className = 'curtain';
+  })();
+}
+// No typing or answering while the curtain is down
+window.addEventListener('keydown', (e) => { if (!$('curtain').hidden) { e.preventDefault(); e.stopPropagation(); } }, true);
 
 // ----- round -----
 function startRound() {
@@ -516,7 +680,8 @@ function startTrial() {
   ask();
   // Start the clock once the first logo is on screen, so loading time doesn't count
   const g = game, first = new Image();
-  first.onload = first.onerror = () => { if (game === g && !g.ended && !g.timer) startClock(); };
+  // ...and once the launch countdown has finished
+  first.onload = first.onerror = () => curtain.then(() => { if (game === g && !g.ended && !g.timer) startClock(); });
   first.src = g.qs[0].img;
 }
 function startClock() {
@@ -753,14 +918,14 @@ $('skip').onclick = () => answer(null);
 // ----- wiring -----
 $('choices').addEventListener('click', (e) => { const b = e.target.closest('.choice'); if (b) answer(b.dataset.name); });
 $('next').onclick = nextQ;
-$('start').onclick = startRound;
-$('again').onclick = startRound;
+$('start').onclick = () => launch(startRound);
+$('again').onclick = () => launch(startRound);
 $('settings').onclick = () => { renderBest(); show('s-start'); };
 $('home').onclick = () => { stopClock(); renderBest(); show('s-start'); };
 $('home').onkeydown = (e) => { if (e.key === 'Enter') { e.stopPropagation(); $('home').click(); } };
 document.addEventListener('keydown', (e) => {
   if (!$('s-play').classList.contains('on')) {
-    if (e.key === 'Enter' && $('s-end').classList.contains('on')) startRound();
+    if (e.key === 'Enter' && $('s-end').classList.contains('on')) launch(startRound);
     return;
   }
   if (!game.answered && picking() && /^[1-4]$/.test(e.key)) {
@@ -791,10 +956,7 @@ if (!ALL.length) $('start').disabled = true, $('best').textContent = 'No logo da
 
 // ----- attract screen for the touchscreen stand -----
 const IDLE_MS = Math.max(15, +params.get('kiosk') || 60) * 1000;
-const calm = matchMedia('(prefers-reduced-motion: reduce)');
 const attract = { built: false, asleep: false, waking: false, run: 0, pings: null, lastActive: Date.now() };
-const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const preload = (src) => new Promise((r) => { const i = new Image(); i.onload = i.onerror = () => r(); i.src = src; });
 
 function buildAttract() {
   if (attract.built) return;
@@ -900,6 +1062,117 @@ if (KIOSK) {
   }, 1000);
   sleep();
 }
+
+// ----- home screen -----
+const onHome = () => document.body.dataset.screen === 'start' && !document.hidden && !(KIOSK && attract.asleep);
+const wide = matchMedia('(min-width: 1100px)');
+const pickLogo = () => { const p = pool(); return p[Math.floor(Math.random() * p.length)] || ALL[0]; };
+
+// Background rows of redacted "text"
+(function buildDoc() {
+  let rows = '';
+  for (let r = 0; r < 24; r++) {
+    let bars = '', w = 0;
+    while (w < 2400) {
+      const bw = 18 + Math.round(Math.random() * 130);
+      bars += Math.random() < .06
+        ? `<i class="p" style="width:${bw}px;--dl:${(Math.random() * 7).toFixed(2)}s"></i>`
+        : `<i style="width:${bw}px"></i>`;
+      w += bw + 12;
+    }
+    rows += `<div class="doc-row" style="top:${12 + r * 24}px;--dur:${90 + (r % 5) * 22}s">${bars}${bars}</div>`;
+  }
+  $('doc').innerHTML = rows;
+})();
+
+// Floating cards: built only on wide screens so phones don't download the extra logos
+const floaters = [];
+function fillFloater(f, l) {
+  f.front.querySelector('img').src = l.img;
+  f.front.classList.toggle('dark', !!l.dark_background);
+  f.back.querySelector('img').src = l.reveal;
+  f.back.querySelector('.nm').textContent = l.name;
+  f.back.classList.toggle('dark', !!l.dark_background);
+}
+function buildFloaters() {
+  if (floaters.length || !wide.matches || !ALL.length) return;
+  $('floaters').innerHTML = Array.from({ length: 4 }, () =>
+    '<div class="floater"><div class="bob"><div class="flip"><div class="face front"><img alt=""></div>'
+    + '<div class="face back"><img alt=""><span class="nm"></span></div></div></div></div>').join('');
+  $('floaters').querySelectorAll('.floater').forEach((el) => {
+    const f = { flip: el.querySelector('.flip'), front: el.querySelector('.front'), back: el.querySelector('.back'), busy: false };
+    fillFloater(f, pickLogo());
+    floaters.push(f);
+  });
+}
+async function flipOne() {
+  if (calm.matches || !onHome() || !floaters.length) return;
+  const f = floaters[Math.floor(Math.random() * floaters.length)];
+  if (f.busy) return;
+  f.busy = true;
+  f.flip.classList.add('show');                        // show the answer
+  await wait(2300);
+  const next = pickLogo();
+  await preload(next.img);
+  f.front.querySelector('img').src = next.img;         // swap the hidden side, then flip back
+  f.front.classList.toggle('dark', !!next.dark_background);
+  f.flip.classList.remove('show');
+  await wait(950);
+  f.back.querySelector('img').src = next.reveal;
+  f.back.querySelector('.nm').textContent = next.name;
+  f.back.classList.toggle('dark', !!next.dark_background);
+  f.busy = false;
+}
+buildFloaters();
+wide.addEventListener('change', buildFloaters);
+setInterval(flipOne, 2600);
+
+// The mouse gently steers the background and the cards
+window.addEventListener('pointermove', (e) => {
+  if (e.pointerType !== 'mouse' || calm.matches || document.body.dataset.screen !== 'start') return;
+  const band = document.querySelector('.band');
+  band.style.setProperty('--px', (e.clientX / innerWidth * 2 - 1).toFixed(3));
+  band.style.setProperty('--py', (e.clientY / innerHeight * 2 - 1).toFixed(3));
+}, { passive: true });
+
+// The headline bar opens to flash a council name, scrambling into place, then shuts again
+function scramble(el, target, ms) {
+  const A = 'abcdefghijklmnopqrstuvwxyz', t0 = performance.now();
+  return new Promise((done) => {
+    (function step(now) {
+      const p = Math.min(1, (now - t0) / ms), k = Math.floor(p * target.length);
+      el.textContent = target.slice(0, k) + [...target.slice(k)].map((ch) => (ch === ' ' ? ' ' : A[Math.floor(Math.random() * 26)])).join('');
+      if (p < 1) requestAnimationFrame(step); else { el.textContent = target; done(); }
+    })(t0);
+  });
+}
+(async function flapLoop() {
+  const bar = $('flap'), txt = bar.querySelector('.flap-text'), h2 = bar.parentElement;
+  await wait(2600);
+  for (;;) {
+    await wait(2800);
+    if (calm.matches || !onHome() || !ALL.length) continue;
+    // Find a name that fits on the line beside "Which"
+    const room = h2.getBoundingClientRect().right - bar.getBoundingClientRect().left - 8;
+    let name = null, w = 0;
+    for (let tries = 0; tries < 15 && !name; tries++) {
+      const n = pickLogo().name;
+      txt.textContent = n; w = txt.scrollWidth;
+      if (w + 10 <= room) name = n;
+    }
+    txt.textContent = '';
+    if (!name) continue;
+    bar.style.width = (w + 10) + 'px';
+    await wait(420);
+    bar.classList.add('open');
+    await scramble(txt, name, 700);
+    await wait(1500);
+    bar.classList.remove('open');
+    await wait(480);
+    txt.textContent = '';
+    bar.style.width = '';
+  }
+})();
 </script>
 </body>
 </html>
