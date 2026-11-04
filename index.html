@@ -4,130 +4,205 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Which Council?</title>
+<link rel="icon" type="image/png" href="Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f3f1ec; --surface: #ffffff; --ink: #1b1c1f; --muted: #6a6c72; --line: #dedbd3;
-    --accent: #1f5bd6; --accent-ink: #ffffff; --good: #16804a; --good-bg: #e3f4ea; --bad: #c2302b; --bad-bg: #fbe7e5;
-    --logo-card: #ffffff; --logo-dark: #26272b; --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+    /* Public Alchemy brand */
+    --purple: #990099; --violet: #877FD1; --blue: #215F9A; --white: #FFFFFF;
+
+    --bg: #F4F3FB; --surface: var(--white); --ink: #1C1934; --muted: #5C5877; --line: #DEDBF0;
+    --band: var(--blue); --band-ink: var(--white);
+    --accent: var(--purple); --accent-hover: #7A007A; --accent-ink: var(--white);
+    --select-bg: #ECEAFA; --select-line: var(--violet); --ring: var(--violet);
+    --good: #1B7F4F; --good-bg: #E4F5EC; --bad: #C0264A; --bad-bg: #FCE8EE;
+    --logo-card: var(--white); --logo-dark: #24203A;
+    --shadow: 0 12px 32px -12px rgba(33, 95, 154, .28);
+    --font: "Overpass", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #141518; --surface: #1d1f23; --ink: #ececee; --muted: #9a9ca3; --line: #2e3036;
-      --accent: #5b8cff; --accent-ink: #0d0f14; --good: #4cc982; --good-bg: #173326; --bad: #ff7a72; --bad-bg: #3a1d1c;
-      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+      --bg: #12101F; --surface: #1C1930; --ink: #EDEBFA; --muted: #A6A1C4; --line: #2E2A4A;
+      --band: #1A4C7C; --select-bg: #2A2650;
+      --good: #4CC98A; --good-bg: #13301F; --bad: #FF7A93; --bad-bg: #3A1724;
+      --shadow: 0 12px 32px -12px rgba(0, 0, 0, .6);
     }
   }
   * { box-sizing: border-box; }
   [hidden] { display: none !important; }
   html, body { margin: 0; }
-  body { background: var(--bg); color: var(--ink); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; min-height: 100vh; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--font); min-height: 100vh; }
+
+  /* The redaction bar: the game's one visual motif */
+  .redact { display: inline-block; background: var(--purple); border-radius: 3px; vertical-align: baseline; }
+
+  /* header band */
+  .band { background: var(--band); color: var(--band-ink); }
+  .band-inner { max-width: 640px; margin: 0 auto; padding: 14px 16px; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 32px; }
+  .top h1 { font-size: 19px; font-weight: 800; margin: 0; letter-spacing: -.01em; cursor: pointer; white-space: nowrap; }
+  .top h1 .redact { width: 2.2em; height: .78em; margin: 0 .22em; }
+  .brand-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  /* Source image is 94x91, so keep it at or below ~46px to stay sharp on 2x screens */
+  /* White tile behind the logo; width includes the 6px padding, so the logo itself stays 44-46px */
+  .brand { display: block; width: 56px; height: auto; padding: 6px; background: var(--white); border-radius: 10px; flex: none;
+           box-shadow: 0 2px 8px rgba(0, 0, 0, .18); }
+  body[data-screen="start"] .brand { width: 58px; }
+  body[data-screen="start"] .top h1 { display: none; }
+  .stats { display: flex; gap: 18px; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .stats b { font-weight: 800; }
+
+  .hero { display: none; padding: 20px 0 84px; }
+  body[data-screen="start"] .hero { display: block; }
+  .hero h2 { font-size: clamp(40px, 11vw, 68px); font-weight: 800; line-height: .98; letter-spacing: -.035em; margin: 0 0 18px; }
+  .hero h2 .redact { width: 3.1em; height: .74em; margin: 0 .12em; transform-origin: left center; animation: redact .7s cubic-bezier(.7, 0, .2, 1) .25s both; }
+  @keyframes redact { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) { .hero h2 .redact { animation: none; } }
+  .hero p { margin: 0; max-width: 32em; font-size: 18px; color: rgba(255, 255, 255, .88); }
+
   .wrap { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
-  header.top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-  header.top h1 { font-size: 20px; margin: 0; letter-spacing: -.01em; cursor: pointer; }
-  header.top h1 span { color: var(--accent); }
-  .stats { display: flex; gap: 14px; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
-  .stats b { color: var(--ink); }
+  body[data-screen="start"] .wrap { margin-top: -60px; }
   .screen { display: none; }
   .screen.on { display: block; }
 
   /* start */
-  .hero { text-align: center; padding: 16px 0 8px; }
-  .hero h2 { font-size: clamp(28px, 7vw, 40px); margin: 0 0 8px; letter-spacing: -.02em; }
-  .hero p { color: var(--muted); margin: 0 auto 24px; max-width: 30em; }
-  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; box-shadow: var(--shadow); }
-  .field + .field { margin-top: 18px; }
-  .label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; box-shadow: var(--shadow); }
+  .field + .field { margin-top: 20px; }
+  .label { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
   .seg { display: flex; flex-wrap: wrap; gap: 8px; }
   .seg button { flex: 1 1 auto; }
-  .opt { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; cursor: pointer; text-align: center; }
-  .opt small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
-  .opt[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); background: var(--surface); }
-  .best { margin-top: 16px; color: var(--muted); font-size: 14px; text-align: center; }
-  .btn { font: inherit; font-weight: 600; border: 0; border-radius: 10px; padding: 12px 20px; cursor: pointer; background: var(--accent); color: var(--accent-ink); }
-  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-  .btn.block { display: block; width: 100%; margin-top: 18px; font-size: 17px; padding: 14px; }
-  .btn:focus-visible, .opt:focus-visible, .choice:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .opt { font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 14px; cursor: pointer; text-align: center; }
+  .opt:hover { border-color: var(--select-line); }
+  .opt small { display: block; color: var(--muted); font-size: 13px; }
+  .opt[aria-pressed="true"] { border-color: var(--select-line); background: var(--select-bg); font-weight: 700; }
+  .opt:disabled { opacity: .4; cursor: not-allowed; }
+  .opt:disabled:hover { border-color: var(--line); }
+  .best { margin-top: 16px; color: var(--muted); font-size: 15px; text-align: center; }
+  .best b { color: var(--ink); }
+  .btn { font: inherit; font-weight: 800; border: 0; border-radius: 10px; padding: 12px 20px; cursor: pointer; background: var(--accent); color: var(--accent-ink); }
+  .btn:hover:not(:disabled) { background: var(--accent-hover); }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+  .btn.ghost:hover:not(:disabled) { background: transparent; border-color: var(--select-line); }
+  .btn.block { display: block; width: 100%; margin-top: 22px; font-size: 18px; padding: 15px; }
+  .btn:focus-visible, .opt:focus-visible, .choice:focus-visible, input:focus-visible, .top h1:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
 
   /* play */
-  .progress { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; margin-bottom: 16px; }
-  .progress div { height: 100%; background: var(--accent); transition: width .3s; }
-  .logo { position: relative; background: var(--logo-card); border-radius: 14px; box-shadow: var(--shadow); border: 1px solid var(--line);
-          aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 24px; overflow: hidden; }
+  .progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 16px; }
+  .progress div { height: 100%; background: var(--violet); transition: width .3s; }
+  .logo { position: relative; background: var(--logo-card); border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow); aspect-ratio: 4 / 3; overflow: hidden; }
   .logo.dark { background: var(--logo-dark); }
   .logo img { position: absolute; inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); object-fit: contain; transition: opacity .2s; }
   .logo img.loading { opacity: 0; }
-  .prompt { text-align: center; color: var(--muted); margin: 16px 0 12px; font-size: 15px; }
+  .prompt { color: var(--muted); margin: 16px 0 12px; font-size: 16px; }
   .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   @media (max-width: 480px) { .choices { grid-template-columns: 1fr; } }
-  .choice { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 14px 40px;
-            text-align: left; cursor: pointer; position: relative; min-height: 54px; }
-  .choice:hover:not(:disabled) { border-color: var(--accent); }
-  .choice kbd { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font: 12px ui-monospace, monospace; color: var(--muted);
-                border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+  .choice { font: inherit; font-weight: 600; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px;
+            padding: 14px 14px 14px 48px; text-align: left; cursor: pointer; position: relative; min-height: 56px; }
+  .choice:hover:not(:disabled) { border-color: var(--select-line); }
+  .choice kbd { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font: 800 13px var(--font); color: var(--ink);
+                background: var(--select-bg); border-radius: 6px; width: 24px; height: 24px; display: grid; place-items: center; }
   .choice.right { border-color: var(--good); background: var(--good-bg); }
   .choice.wrong { border-color: var(--bad); background: var(--bad-bg); }
   .choice:disabled { cursor: default; }
   .typed { position: relative; }
-  .typed input { width: 100%; font: inherit; font-size: 17px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+  .typed input { width: 100%; font: inherit; font-size: 18px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; padding: 14px; }
+  .typed input:focus { border-color: var(--select-line); }
   .typed input.shake { animation: shake .3s; border-color: var(--bad); }
   @keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
   .sugg { list-style: none; margin: 6px 0 0; padding: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow);
           position: absolute; left: 0; right: 0; z-index: 5; max-height: 280px; overflow: auto; }
   .sugg:empty { display: none; }
   .sugg li { padding: 9px 10px; border-radius: 6px; cursor: pointer; }
-  .sugg li.hi { background: var(--bg); }
-  .sugg li small { color: var(--muted); margin-left: 6px; }
+  .sugg li.hi { background: var(--select-bg); }
+  .sugg li small { color: var(--muted); margin-left: 8px; }
   .row { display: flex; gap: 10px; justify-content: space-between; margin-top: 12px; }
   .feedback { margin-top: 14px; border-radius: 12px; padding: 14px 16px; display: none; }
   .feedback.on { display: block; }
   .feedback.good { background: var(--good-bg); }
   .feedback.bad { background: var(--bad-bg); }
-  .feedback h3 { margin: 0 0 2px; font-size: 18px; }
+  .feedback h3 { margin: 0 0 2px; font-size: 20px; font-weight: 800; }
   .feedback.good h3 { color: var(--good); }
   .feedback.bad h3 { color: var(--bad); }
-  .feedback p { margin: 0; color: var(--muted); font-size: 14px; }
+  .feedback p { margin: 0; color: var(--muted); font-size: 15px; }
   .feedback .btn { margin-top: 12px; width: 100%; }
+  .feedback.trial .btn { display: none; }
 
   /* end */
-  .score-big { text-align: center; padding: 8px 0 20px; }
-  .score-big .n { font-size: 64px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
-  .score-big .n span { color: var(--muted); font-size: 32px; }
-  .score-big p { color: var(--muted); margin: 8px 0 0; }
+  .score-big { padding: 8px 0 20px; }
+  .score-big .n { font-size: clamp(48px, 13vw, 76px); font-weight: 800; letter-spacing: -.035em; line-height: 1; }
+  .score-big .n span { color: var(--muted); }
+  .score-big .n .unit { display: block; font-size: .42em; letter-spacing: -.015em; margin-top: 6px; }
+  .score-big p { color: var(--muted); margin: 10px 0 0; font-size: 18px; }
   .recap { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 8px 0 20px; }
-  .recap div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font-size: 13px; }
+  .recap > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font-size: 14px; }
   .recap .thumb { background: var(--logo-card); border-radius: 6px; height: 80px; display: grid; place-items: center; padding: 6px; margin-bottom: 6px; }
   .recap .thumb.dark { background: var(--logo-dark); }
   .recap img { max-width: 100%; max-height: 68px; object-fit: contain; }
-  .recap .ok { color: var(--good); font-weight: 600; }
-  .recap .no { color: var(--bad); font-weight: 600; }
+  .recap .ok { color: var(--good); font-weight: 700; }
+  .recap .no { color: var(--bad); font-weight: 700; }
   .recap .guess { color: var(--muted); display: block; }
   .end-actions { display: flex; gap: 10px; }
   .end-actions .btn { flex: 1; }
+  @media (max-width: 480px) { .top { flex-wrap: wrap; } .stats { gap: 12px; font-size: 13px; } }
+
+  /* time trial */
+  .stepper { display: flex; gap: 8px; }
+  .stepper .step { flex: none; width: 52px; padding: 0; font-size: 24px; font-weight: 700; line-height: 1; }
+  .secs-box { flex: 1; display: flex; align-items: baseline; justify-content: center; gap: 8px; padding: 8px 12px;
+              border: 1.5px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .secs-box:focus-within { border-color: var(--select-line); outline: 3px solid var(--ring); outline-offset: 2px; }
+  .secs-box input { width: 4ch; font: 800 26px var(--font); text-align: right; color: var(--ink); background: transparent; border: 0; padding: 0;
+                    -moz-appearance: textfield; appearance: textfield; }
+  .secs-box input::-webkit-inner-spin-button, .secs-box input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  .secs-box input:focus-visible { outline: none; }
+  .secs-box span { color: var(--muted); }
+  .stats .time b { display: inline-block; min-width: 3.2ch; }
+  .stats .time.low { background: var(--purple); border-radius: 999px; padding: 0 9px; margin: 0 -9px; }
 </style>
 </head>
-<body>
-<div class="wrap">
-  <header class="top">
-    <h1 id="home">Which <span>Council?</span></h1>
-    <div class="stats" id="stats" hidden>
-      <span>Q <b id="qn">1</b>/<span id="qt">10</span></span>
-      <span>Score <b id="sc">0</b></span>
-      <span>Streak <b id="st">0</b></span>
+<body data-screen="start">
+<header class="band">
+  <div class="band-inner">
+    <div class="top">
+      <div class="brand-row">
+        <img class="brand" src="Logo.png" alt="Public Alchemy" width="94" height="91">
+        <h1 id="home" tabindex="0" aria-label="Which Council? Back to start">Which<span class="redact" aria-hidden="true"></span>Council?</h1>
+      </div>
+      <div class="stats" id="stats" hidden>
+        <span id="st-q">Question <b id="qn">1</b> of <span id="qt">10</span></span>
+        <span id="st-t" class="time" hidden>Time <b id="time">1:00</b></span>
+        <span>Score <b id="sc">0</b></span>
+        <span>Streak <b id="st">0</b></span>
+      </div>
     </div>
-  </header>
+    <div class="hero">
+      <h2>Which<span class="redact" aria-hidden="true"></span>Council?</h2>
+      <p>Every logo has its place name blacked out. Work out which council it belongs to, ten logos at a time or as many as you can against the clock. From <span id="total">all UK councils</span>.</p>
+    </div>
+  </div>
+</header>
+<div class="wrap">
 
   <!-- start -->
   <section class="screen on" id="s-start">
-    <div class="hero">
-      <h2>Name the council from its logo</h2>
-      <p>The place names have been blacked out. Ten logos per round, from <span id="total">all</span> UK local authorities.</p>
-    </div>
     <div class="panel">
       <div class="field">
         <div class="label">Mode</div>
         <div class="seg" id="mode">
           <button class="opt" data-v="easy" aria-pressed="true">Easy<small>Pick from 4</small></button>
           <button class="opt" data-v="hard" aria-pressed="false">Hard<small>Type the name</small></button>
+          <button class="opt" data-v="trial" aria-pressed="false">Time trial<small>Type against the clock</small></button>
+        </div>
+      </div>
+      <div class="field" id="time-field" hidden>
+        <label class="label" for="secs">Time limit</label>
+        <div class="stepper">
+          <button class="opt step" id="secs-down" aria-label="15 seconds less">−</button>
+          <div class="secs-box"><input id="secs" type="number" inputmode="numeric" min="15" max="600" step="15" value="60"><span>seconds</span></div>
+          <button class="opt step" id="secs-up" aria-label="15 seconds more">+</button>
         </div>
       </div>
       <div class="field">
@@ -138,6 +213,14 @@
           <button class="opt" data-v="Scotland" aria-pressed="false">Scotland</button>
           <button class="opt" data-v="Wales" aria-pressed="false">Wales</button>
           <button class="opt" data-v="Northern Ireland" aria-pressed="false">N. Ireland</button>
+        </div>
+      </div>
+      <div class="field">
+        <div class="label">Tier</div>
+        <div class="seg" id="tier">
+          <button class="opt" data-v="all" aria-pressed="true">All tiers<small>Every council</small></button>
+          <button class="opt" data-v="upper" aria-pressed="false">Upper tier<small>Counties and unitaries</small></button>
+          <button class="opt" data-v="lower" aria-pressed="false">Lower tier<small>District councils</small></button>
         </div>
       </div>
       <button class="btn block" id="start">Start round</button>
@@ -169,7 +252,7 @@
   <!-- end -->
   <section class="screen" id="s-end">
     <div class="score-big">
-      <div class="n" id="final">0<span>/10</span></div>
+      <div class="n" id="final">0<span> out of 10</span></div>
       <p id="verdict"></p>
     </div>
     <div class="recap" id="recap"></div>
@@ -185,7 +268,8 @@
 const ROUND = 10;
 const $ = (id) => document.getElementById(id);
 const ALL = window.LOGOS || [];
-const settings = { mode: 'easy', region: 'all' };
+const settings = { mode: 'easy', region: 'all', tier: 'all', seconds: 60 };
+const clampSecs = (v) => Math.min(600, Math.max(15, Math.round((+v || 60) / 5) * 5));
 let game = null;
 const seen = new Set();  // avoid repeats across rounds until the pool runs out
 
@@ -196,10 +280,31 @@ const store = {
 const norm = (s) => s.toLowerCase().replace(/&/g, 'and').replace(/^(the |city of |county of )/, '').replace(/[^a-z0-9]/g, '');
 const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const pool = () => ALL.filter((l) => settings.region === 'all' || l.nation === settings.region);
-const bestKey = () => `wc-best-${settings.mode}-${settings.region}`;
+// District councils are the lower tier; counties and every single-tier council count as upper tier
+const tierOf = (l) => (l.type === 'Non-metropolitan district' ? 'lower' : 'upper');
+const inScope = (l, region, tier) => (region === 'all' || l.nation === region) && (tier === 'all' || tierOf(l) === tier);
+const pool = () => ALL.filter((l) => inScope(l, settings.region, settings.tier));
+const bestKey = () => {
+  const tier = settings.tier === 'all' ? '' : `-${settings.tier}`;  // no suffix for "all" keeps earlier bests
+  return settings.mode === 'trial'
+    ? `wc-best-trial-${settings.seconds}-${settings.region}${tier}`
+    : `wc-best-${settings.mode}-${settings.region}${tier}`;
+};
+const TIER_WORD = { upper: 'upper-tier ', lower: 'lower-tier ', all: '' };
+function scopeText() {
+  const n = pool().length, tier = TIER_WORD[settings.tier];
+  if (settings.region === 'all' && settings.tier === 'all') return `all ${n} UK councils`;
+  return `the ${n} ${tier}${n === 1 ? 'council' : 'councils'}${settings.region === 'all' ? ' in the UK' : ` in ${settings.region}`}`;
+}
+// Grey out any region or tier that would leave no councils with the other current choice
+function updateAvailability() {
+  $('region').querySelectorAll('.opt').forEach((o) => { o.disabled = !ALL.some((l) => inScope(l, o.dataset.v, settings.tier)); });
+  $('tier').querySelectorAll('.opt').forEach((o) => { o.disabled = !ALL.some((l) => inScope(l, settings.region, o.dataset.v)); });
+}
+const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
 
 function show(id) {
+  document.body.dataset.screen = id.slice(2);
   document.querySelectorAll('.screen').forEach((s) => s.classList.toggle('on', s.id === id));
   $('stats').hidden = id !== 's-play';
 }
@@ -215,19 +320,36 @@ function bindSeg(id, key) {
   });
 }
 function applySettings() {
-  for (const [id, key] of [['mode', 'mode'], ['region', 'region']]) {
+  if (!ALL.some((l) => inScope(l, settings.region, settings.tier))) settings.tier = 'all';  // stale saved combo
+  for (const [id, key] of [['mode', 'mode'], ['region', 'region'], ['tier', 'tier']]) {
     $(id).querySelectorAll('.opt').forEach((o) => o.setAttribute('aria-pressed', o.dataset.v === settings[key]));
   }
+  settings.seconds = clampSecs(settings.seconds);
+  $('secs').value = settings.seconds;
 }
 function renderBest() {
   const b = store.get(bestKey());
-  const n = pool().length;
-  $('total').textContent = settings.region === 'all' ? `all ${ALL.length}` : `${n} ${settings.region}`;
-  $('best').textContent = b != null ? `Your best here: ${b}/${ROUND}` : '';
+  const trial = settings.mode === 'trial';
+  $('total').textContent = scopeText();
+  updateAvailability();
+  $('time-field').hidden = !trial;
+  $('start').textContent = trial ? 'Start the clock' : 'Start round';
+  $('best').innerHTML = b == null ? ''
+    : trial ? `Your best for ${settings.seconds} seconds here: <b>${plural(b, 'council')}</b>`
+    : `Your best here: <b>${b} out of ${ROUND}</b>`;
+}
+function setSecs(v) {
+  settings.seconds = clampSecs(v);
+  $('secs').value = settings.seconds;
+  store.set('wc-settings', settings);
+  renderBest();
 }
 
 // ----- round -----
 function startRound() {
+  stopClock();
+  if (settings.mode === 'trial') return startTrial();
+  $('st-q').hidden = false; $('st-t').hidden = true;
   const p = pool();
   let fresh = shuffle(p.filter((l) => !seen.has(l.img)));
   if (fresh.length < ROUND) { p.forEach((l) => seen.delete(l.img)); fresh = shuffle(p.slice()); }
@@ -238,13 +360,60 @@ function startRound() {
   ask();
 }
 
+// ----- time trial -----
+const fmtTime = (ms) => { const s = Math.ceil(ms / 1000); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
+
+function startTrial() {
+  const secs = clampSecs(settings.seconds);
+  game = { trial: true, secs, qs: shuffle(pool().slice()), i: 0, score: 0, streak: 0, answered: false, log: [],
+           deadline: null, timer: null, pending: null, ended: false };
+  $('st-q').hidden = true; $('st-t').hidden = false;
+  $('time').textContent = fmtTime(secs * 1000);
+  $('st-t').classList.remove('low');
+  $('bar').style.width = '100%';
+  show('s-play');
+  ask();
+  // Start the clock once the first logo is on screen, so loading time doesn't count
+  const g = game, first = new Image();
+  first.onload = first.onerror = () => { if (game === g && !g.ended && !g.timer) startClock(); };
+  first.src = g.qs[0].img;
+}
+function startClock() {
+  game.deadline = performance.now() + game.secs * 1000;
+  tick();
+  game.timer = setInterval(tick, 100);
+}
+function tick() {
+  const left = Math.max(0, game.deadline - performance.now());
+  $('time').textContent = fmtTime(left);
+  $('bar').style.width = (100 * left / (game.secs * 1000)) + '%';
+  $('st-t').classList.toggle('low', left <= 10000);
+  if (left <= 0) timeUp();
+}
+function stopClock() {
+  if (!game || !game.trial) return;
+  clearInterval(game.timer); clearTimeout(game.pending);
+  game.ended = true;
+}
+function timeUp() {
+  if (game.ended) return;
+  stopClock();
+  finishTrial();
+}
+function advanceTrial() {
+  if (game.ended) return;
+  game.i++;
+  if (game.i >= game.qs.length) game.qs.push(...shuffle(pool().slice()));  // ran out: go round again
+  ask();
+}
+
 function ask() {
   const q = game.qs[game.i];
   game.answered = false;
   $('qn').textContent = game.i + 1;
   $('sc').textContent = game.score;
   $('st').textContent = game.streak;
-  $('bar').style.width = (100 * game.i / game.qs.length) + '%';
+  if (!game.trial) $('bar').style.width = (100 * game.i / game.qs.length) + '%';
   $('logo').classList.toggle('dark', !!q.dark_background);
   setImg(q.img);
   const next = game.qs[game.i + 1];
@@ -260,8 +429,9 @@ function ask() {
       `<button class="choice" data-name="${esc(o.name)}"><kbd>${i + 1}</kbd>${esc(o.name)}</button>`).join('');
   } else {
     $('choices').hidden = true; $('typed').hidden = false;
-    $('guess').value = ''; $('guess').disabled = false; $('sugg').innerHTML = '';
+    $('guess').value = ''; $('guess').disabled = false; $('guess').readOnly = false; $('sugg').innerHTML = '';
     $('skip').disabled = false; $('submit').disabled = false;
+    $('skip').textContent = game.trial ? 'Skip' : 'Give up';
     $('guess').focus();
   }
 }
@@ -274,7 +444,9 @@ function setImg(src) {
 }
 
 function distractors(q) {
-  const others = ALL.filter((l) => l !== q);
+  // Decoys come from the chosen region and tier, falling back to everything if that's too few
+  const scoped = pool().filter((l) => l !== q);
+  const others = scoped.length >= 3 ? scoped : ALL.filter((l) => l !== q);
   const tiers = [
     others.filter((l) => l.nation === q.nation && l.type === q.type),
     others.filter((l) => l.nation === q.nation),
@@ -291,7 +463,7 @@ function distractors(q) {
 }
 
 function answer(guessName) {
-  if (game.answered) return;
+  if (game.answered || game.ended) return;
   game.answered = true;
   const q = game.qs[game.i];
   const ok = guessName != null && (norm(guessName) === norm(q.name) || norm(guessName) === norm(q.official_name));
@@ -299,6 +471,7 @@ function answer(guessName) {
   game.log.push({ q, guess: guessName, ok });
   $('sc').textContent = game.score;
   $('st').textContent = game.streak;
+  if (game.trial) return flashTrial(q, ok, guessName);
   $('bar').style.width = (100 * (game.i + 1) / game.qs.length) + '%';
 
   setImg(q.reveal);
@@ -314,11 +487,33 @@ function answer(guessName) {
   }
   $('prompt').textContent = '';
   $('fb-h').textContent = ok ? (game.streak >= 3 ? `Correct! ${game.streak} in a row` : 'Correct!') : guessName == null ? `It was ${q.name}` : `No — it was ${q.name}`;
-  $('fb-p').textContent = `${q.official_name} · ${q.type} · ${q.nation}`;
+  $('fb-p').textContent = `${q.official_name}, ${describe(q)}.`;
   $('fb').className = 'feedback on ' + (ok ? 'good' : 'bad');
   $('next').textContent = game.i + 1 < game.qs.length ? 'Next' : 'See results';
   $('next').focus();
 }
+
+// Time trial: show the result briefly, then move straight on (the clock keeps running)
+function flashTrial(q, ok, guessName) {
+  setImg(q.reveal);
+  $('guess').readOnly = true;  // readOnly rather than disabled keeps the phone keyboard open
+  $('sugg').innerHTML = '';
+  $('skip').disabled = true; $('submit').disabled = true;
+  $('prompt').textContent = '';
+  $('fb-h').textContent = ok ? (game.streak >= 3 ? `Correct! ${game.streak} in a row` : 'Correct!')
+    : guessName == null ? `Skipped. It was ${q.name}` : `No — it was ${q.name}`;
+  $('fb-p').textContent = `${q.official_name}, ${describe(q)}.`;
+  $('fb').className = 'feedback on trial ' + (ok ? 'good' : 'bad');
+  game.pending = setTimeout(advanceTrial, ok ? 500 : 1300);
+}
+
+const KIND = {
+  'Non-metropolitan district': 'a district council', 'Unitary authority': 'a unitary authority',
+  'Metropolitan district': 'a metropolitan borough', 'London borough': 'a London borough', 'County': 'a county council',
+  'Scottish unitary authority': 'a council area', 'Welsh unitary authority': 'a principal area',
+  'NI district': 'a district council', 'City corporation': 'the city corporation',
+};
+const describe = (q) => `${KIND[q.type] || 'a council'} in ${q.nation}`;
 
 function nextQ() {
   if (!game || !game.answered) return;
@@ -330,18 +525,36 @@ function finish() {
   const s = game.score, n = game.qs.length;
   const prev = store.get(bestKey());
   if (prev == null || s > prev) store.set(bestKey(), s);
-  $('final').innerHTML = `${s}<span>/${n}</span>`;
+  $('final').innerHTML = `${s}<span> out of ${n}</span>`;
   const pct = s / n;
   let v = pct === 1 ? 'Perfect. You might work in local government.' : pct >= .7 ? 'Impressive civic knowledge.' : pct >= .4 ? 'Not bad — those crests are tricky.' : 'Plenty of councils left to learn.';
   if (prev != null && s > prev) v += ' New best!';
   $('verdict').textContent = v;
+  renderRecap();
+  show('s-end');
+}
+
+function finishTrial() {
+  const s = game.score, tried = game.log.length;
+  const prev = store.get(bestKey());
+  if (prev == null || s > prev) store.set(bestKey(), s);
+  $('final').innerHTML = `${s}<span class="unit">${s === 1 ? 'council' : 'councils'} in ${game.secs} seconds</span>`;
+  let v = tried === 0 ? 'The clock ran out before you answered any.'
+    : `You named ${s} of the ${plural(tried, 'logo')} you tried.`;
+  if (prev != null && s > prev) v += ' New best!';
+  else if (prev != null) v += ` Your best for ${game.secs} seconds here is ${prev}.`;
+  $('verdict').textContent = v;
+  renderRecap();
+  show('s-end');
+}
+
+function renderRecap() {
   $('recap').innerHTML = game.log.map(({ q, guess, ok }) => `
     <div>
       <div class="thumb${q.dark_background ? ' dark' : ''}"><img src="${q.reveal}" alt="" loading="lazy"></div>
       <span class="${ok ? 'ok' : 'no'}">${ok ? '✓' : '✗'} ${esc(q.name)}</span>
-      ${!ok ? `<span class="guess">${guess == null ? 'Gave up' : 'You said ' + esc(guess)}</span>` : ''}
+      ${!ok ? `<span class="guess">${guess == null ? (game.trial ? 'Skipped' : 'Gave up') : 'You said ' + esc(guess)}</span>` : ''}
     </div>`).join('');
-  show('s-end');
 }
 
 // ----- typed mode: suggestions -----
@@ -394,12 +607,14 @@ $('next').onclick = nextQ;
 $('start').onclick = startRound;
 $('again').onclick = startRound;
 $('settings').onclick = () => { renderBest(); show('s-start'); };
-$('home').onclick = () => { renderBest(); show('s-start'); };
+$('home').onclick = () => { stopClock(); renderBest(); show('s-start'); };
+$('home').onkeydown = (e) => { if (e.key === 'Enter') { e.stopPropagation(); $('home').click(); } };
 document.addEventListener('keydown', (e) => {
   if (!$('s-play').classList.contains('on')) {
     if (e.key === 'Enter' && $('s-end').classList.contains('on')) startRound();
     return;
   }
+  if (game.trial) return;  // time trial moves on by itself
   if (game.answered && e.key === 'Enter') { e.preventDefault(); nextQ(); return; }
   if (!game.answered && settings.mode === 'easy' && /^[1-4]$/.test(e.key)) {
     const b = $('choices').children[+e.key - 1]; if (b) answer(b.dataset.name);
@@ -410,6 +625,10 @@ Object.assign(settings, store.get('wc-settings') || {});
 applySettings();
 bindSeg('mode', 'mode');
 bindSeg('region', 'region');
+bindSeg('tier', 'tier');
+$('secs-down').onclick = () => setSecs(settings.seconds - 15);
+$('secs-up').onclick = () => setSecs(settings.seconds + 15);
+$('secs').addEventListener('change', () => setSecs($('secs').value));
 renderBest();
 if (!ALL.length) $('start').disabled = true, $('best').textContent = 'No logo data found — run tools/apply.py first.';
 </script>

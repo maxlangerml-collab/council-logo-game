@@ -8,8 +8,10 @@ A guessing game: name the UK local authority from its logo, with the place name 
 
 - **Easy** – pick the right council from four options (keys 1–4 work too).
 - **Hard** – type the name and choose from the autocomplete.
+- **Time trial** – type as many as you can before the clock runs out (60 seconds by default, or choose your own time).
 - Filter by region (England, Scotland, Wales or Northern Ireland), or play with all of the UK.
-- Each round is 10 logos. The full logo is revealed after every answer.
+- Filter by tier: **upper tier** is county councils plus every single-tier council (unitaries, metropolitan and London boroughs, and all councils in Scotland, Wales and Northern Ireland); **lower tier** is England's district councils.
+- Easy and Hard rounds are 10 logos. The full logo is revealed after every answer.
 
 ## What's in here
 
