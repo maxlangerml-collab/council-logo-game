@@ -13,6 +13,14 @@ A guessing game: name the UK local authority from its logo, with the place name 
 - Filter by tier: **upper tier** is county councils plus every single-tier council (unitaries, metropolitan and London boroughs, and all councils in Scotland, Wales and Northern Ireland); **lower tier** is England's district councils.
 - Easy and Hard rounds are 10 logos. The full logo is revealed after every answer.
 
+## On a touchscreen stand
+
+Open the game with `?kiosk` on the end of the address:
+
+https://maxlangerml-collab.github.io/council-logo-game/?kiosk
+
+Kiosk mode is one fixed game: a 60-second time trial on the 153 upper-tier councils in England, picking the answer from four options, with the settings hidden and a "best on this stand" score. It starts on a "Touch to play" screen and goes back to it after 60 seconds without a touch, abandoning any unfinished round (a running time trial is never cut short). To change the wait, add the number of seconds, for example `?kiosk=90`. Kiosk mode also turns off text selection and long-press menus. For a true full-screen stand, run the browser in kiosk mode (for example, Chrome or Edge with `--kiosk`) or press F11.
+
 ## What's in here
 
 - `index.html` – the whole game; no build step or server needed.

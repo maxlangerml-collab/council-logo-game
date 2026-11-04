@@ -45,8 +45,7 @@
   .top h1 { font-size: 19px; font-weight: 800; margin: 0; letter-spacing: -.01em; cursor: pointer; white-space: nowrap; }
   .top h1 .redact { width: 2.2em; height: .78em; margin: 0 .22em; }
   .brand-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
-  /* Source image is 94x91, so keep it at or below ~46px to stay sharp on 2x screens */
-  /* White tile behind the logo; width includes the 6px padding, so the logo itself stays 44-46px */
+  /* White tile behind the logo; width includes the 6px padding */
   .brand { display: block; width: 56px; height: auto; padding: 6px; background: var(--white); border-radius: 10px; flex: none;
            box-shadow: 0 2px 8px rgba(0, 0, 0, .18); }
   body[data-screen="start"] .brand { width: 58px; }
@@ -161,6 +160,120 @@
   .secs-box span { color: var(--muted); }
   .stats .time b { display: inline-block; min-width: 3.2ch; }
   .stats .time.low { background: var(--purple); border-radius: 999px; padding: 0 9px; margin: 0 -9px; }
+
+  /* ----- attract screen for the touchscreen stand (?kiosk) ----- */
+  @property --r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+  body.kiosk { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+  body.asleep { overflow: hidden; }
+  body.kiosk #s-start .field, body.kiosk #settings { display: none; }
+  body.kiosk #start { margin-top: 0; font-size: 24px; padding: 22px; }
+  body.kiosk input { -webkit-user-select: text; user-select: text; }
+  .attract { --night: #0C2440; position: fixed; inset: 0; z-index: 100; overflow: hidden; cursor: pointer; touch-action: none;
+             color: var(--white); -webkit-user-select: none; user-select: none;
+             background: radial-gradient(circle at 85% 15%, #3A2E8E 0%, transparent 48%), radial-gradient(circle at 8% 92%, #5E0A5E 0%, transparent 42%), var(--night); }
+  .attract:focus { outline: none; }
+  /* Wake: a hole opens from the touch point and grows until the game shows through */
+  .attract.leaving { animation: a-out .65s cubic-bezier(.7, 0, .25, 1) forwards;
+    -webkit-mask-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), transparent var(--r), #000 calc(var(--r) + 2px));
+            mask-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), transparent var(--r), #000 calc(var(--r) + 2px)); }
+  @keyframes a-out { to { --r: 160vmax; } }
+
+  /* The wall: every column of redacted logos scrolls, tilted back like a billboard */
+  .a-wall { position: absolute; left: 50%; top: 50%; width: 200vmax; height: 200vmax; display: flex; gap: 1.6vmax; opacity: .6;
+            transform: translate(-50%, -50%) perspective(140vmax) rotateX(28deg) rotateZ(-14deg); }
+  .a-col { flex: 1; min-width: 0; }
+  .a-track { display: flex; flex-direction: column; gap: 1.6vmax; animation: a-scroll var(--dur, 80s) linear infinite; will-change: transform; }
+  .a-col:nth-child(even) .a-track { animation-direction: reverse; }
+  @keyframes a-scroll { to { transform: translateY(calc(-50% - .8vmax)); } }
+  .a-tile { position: relative; aspect-ratio: 1; background: var(--white); border-radius: 1.6vmax; padding: 14%; overflow: hidden;
+            box-shadow: 0 1.2vmax 2.4vmax -1vmax rgba(0, 0, 0, .6); }
+  .a-tile.dark { background: var(--logo-dark); }
+  .a-tile img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .a-tile::after { content: ""; position: absolute; left: 10%; right: 10%; top: var(--y, 42%); height: 16%; border-radius: .4vmax;
+                   background: var(--purple); clip-path: inset(0 100% 0 0); }
+  .a-tile.ping::after { animation: a-ping 1.8s cubic-bezier(.7, 0, .2, 1); }
+  @keyframes a-ping { 35%, 65% { clip-path: inset(0 0 0 0); } 100% { clip-path: inset(0 0 0 100%); } }
+
+  .a-scrim { position: absolute; inset: 0;
+             background: radial-gradient(ellipse 75% 85% at 50% 50%, rgba(12, 36, 64, .9) 30%, rgba(12, 36, 64, .55) 75%, rgba(12, 36, 64, .25) 100%); }
+  .a-sweep { position: absolute; top: -60%; bottom: -60%; left: -60vmax; width: 34vmax; mix-blend-mode: screen; pointer-events: none;
+             background: linear-gradient(90deg, transparent, rgba(153, 0, 153, .55) 40%, rgba(135, 127, 209, .6) 60%, transparent);
+             animation: a-sweep 9s cubic-bezier(.65, 0, .35, 1) infinite 1.5s; transform: rotate(16deg); }
+  @keyframes a-sweep { 0% { transform: rotate(16deg) translateX(0); } 40%, 100% { transform: rotate(16deg) translateX(240vmax); } }
+
+  /* Stage: headline and call to action on the left, a live demo card on the right */
+  .a-stage { position: relative; height: 100%; max-width: 1900px; margin: 0 auto; padding: 6vmin 7vmin; display: grid;
+             grid-template-columns: auto auto; grid-template-areas: "brand card" "title card" "sub card" "cta card";
+             align-content: center; justify-content: space-around; column-gap: 6vmin; }
+  .a-brand { grid-area: brand; width: clamp(64px, 10vmin, 140px); padding: 1vmin; background: var(--white); border-radius: 1.6vmin;
+             box-shadow: 0 1vmin 3vmin rgba(0, 0, 0, .35); margin-bottom: 4vmin; }
+  .a-title { grid-area: title; margin: 0; font-size: clamp(56px, 14vmin, 190px); font-weight: 800; line-height: .92; letter-spacing: -.045em; }
+  .a-title .ch { display: inline-block; animation: a-wave 3.6s ease-in-out infinite; animation-delay: calc(var(--i) * 90ms); }
+  @keyframes a-wave { 0%, 60%, 100% { transform: none; } 30% { transform: translateY(-.07em); } }
+  .a-title .redact { position: relative; overflow: hidden; width: 2.5em; height: .74em; margin-left: .14em; transform-origin: left center;
+                     animation: redact .8s cubic-bezier(.7, 0, .2, 1) .2s both; }
+  .a-title .redact::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%);
+                            background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, .55) 50%, transparent 70%);
+                            animation: a-shine 3.6s ease-in-out 1.2s infinite; }
+  @keyframes a-shine { 45%, 100% { transform: translateX(100%); } }
+  .a-sub { grid-area: sub; margin: 3.5vmin 0 5vmin; max-width: 21em; font-size: clamp(18px, 3vmin, 40px); line-height: 1.35; color: rgba(255, 255, 255, .88); }
+  .a-cta { grid-area: cta; justify-self: start; display: inline-flex; align-items: center; gap: 2.6vmin; padding: 2.4vmin 4.6vmin 2vmin 3.2vmin;
+           border-radius: 999px; background: var(--purple); font-size: clamp(26px, 5vmin, 72px); font-weight: 800; letter-spacing: -.02em; line-height: 1;
+           box-shadow: 0 0 0 .5vmin rgba(255, 255, 255, .9), 0 2vmin 6vmin -1vmin rgba(153, 0, 153, .9); animation: a-breathe 2.4s ease-in-out infinite; }
+  @keyframes a-breathe { 50% { transform: scale(1.045); } }
+  .a-dot { position: relative; flex: none; width: 2.6vmin; height: 2.6vmin; margin-top: -.4vmin; border-radius: 50%; background: var(--white); }
+  .a-dot::before, .a-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: .45vmin solid var(--white);
+                                  animation: a-ripple 2.4s cubic-bezier(.2, .6, .3, 1) infinite; }
+  .a-dot::after { animation-delay: 1.2s; }
+  @keyframes a-ripple { from { transform: scale(1); opacity: 1; } to { transform: scale(4.2); opacity: 0; } }
+
+  .a-spot { grid-area: card; align-self: center; position: relative; width: clamp(280px, 60vmin, 820px); animation: a-bob 7s ease-in-out infinite; }
+  @keyframes a-bob { 50% { transform: translateY(-1.6vmin) rotate(.8deg); } }
+  .a-halo { position: absolute; inset: -16%; border-radius: 50%; opacity: .7; filter: blur(6vmin);
+            background: conic-gradient(var(--purple), var(--violet), var(--blue), var(--purple)); animation: a-spin 12s linear infinite; }
+  @keyframes a-spin { to { transform: rotate(1turn); } }
+  .a-card { position: relative; background: var(--white); color: var(--ink); border-radius: 3vmin; padding: 2.6vmin 2.6vmin 2vmin;
+            box-shadow: 0 5vmin 9vmin -3vmin rgba(0, 0, 0, .6); opacity: 0; transform: translateY(6vmin) rotate(-5deg) scale(.82);
+            transition: transform .8s cubic-bezier(.2, 1.5, .4, 1), opacity .35s; }
+  .a-card.in { opacity: 1; transform: none; }
+  .a-card.out { opacity: 0; transform: translateY(-5vmin) rotate(4deg) scale(1.08); transition: transform .55s cubic-bezier(.6, 0, .8, .4), opacity .45s; }
+  .a-card.reset { transition: none; }
+  .a-logo { position: relative; aspect-ratio: 4 / 3; border-radius: 1.8vmin; overflow: hidden; background: var(--white); }
+  .a-logo.dark { background: var(--logo-dark); }
+  .a-logo img { position: absolute; inset: 7%; width: 86%; height: 86%; object-fit: contain; }
+  .a-wipe { position: absolute; inset: 0; background: var(--purple); clip-path: inset(0 100% 0 0); }
+  .a-card.wipe .a-wipe { animation: a-wipe .95s cubic-bezier(.7, 0, .25, 1); }
+  @keyframes a-wipe { 45%, 55% { clip-path: inset(0 0 0 0); } 100% { clip-path: inset(0 0 0 100%); } }
+  .a-cap { min-height: 2.3em; display: flex; align-items: center; justify-content: center; margin-top: 1.4vmin; text-align: center;
+           font-size: clamp(20px, 3.8vmin, 52px); font-weight: 800; line-height: 1.12; letter-spacing: -.02em; color: var(--muted); }
+  .a-cap.named { color: var(--purple); }
+  .a-cap.named::after { content: ""; flex: none; width: .09em; height: .95em; margin-left: .08em; background: currentColor; animation: a-blink .8s steps(1) infinite; }
+  @keyframes a-blink { 50% { opacity: 0; } }
+
+  /* The burst of redaction bars that flies out from a touch */
+  .a-burst { position: fixed; z-index: 101; left: 0; top: 0; width: 0; height: 0; pointer-events: none; }
+  .a-burst span { position: absolute; left: 0; top: -.6vmax; width: var(--w); height: 1.2vmax; border-radius: .3vmax; background: var(--c);
+                  transform-origin: left center; animation: a-fly .8s cubic-bezier(.12, .7, .3, 1) forwards; }
+  @keyframes a-fly { from { transform: rotate(var(--a)) translateX(1vmax) scaleX(.2); } 70% { opacity: 1; }
+                     to { transform: rotate(var(--a)) translateX(var(--d)) scaleX(1); opacity: 0; } }
+  .a-burst i { position: absolute; left: -3vmax; top: -3vmax; width: 6vmax; height: 6vmax; border-radius: 50%; border: .7vmax solid var(--violet);
+               animation: a-ring .7s cubic-bezier(.2, .7, .3, 1) forwards; }
+  .a-burst i + i { border-color: var(--purple); animation-delay: .08s; }
+  @keyframes a-ring { from { transform: scale(.3); opacity: 1; } to { transform: scale(7); opacity: 0; } }
+
+  @media (orientation: portrait) {
+    .a-stage { grid-template-columns: auto; grid-template-areas: "brand" "title" "sub" "card" "cta"; justify-content: center; justify-items: center; text-align: center; }
+    .a-sub { margin-bottom: 5vmin; }
+    .a-spot { margin-bottom: 7vmin; }
+    .a-cta { justify-self: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .a-track, .a-sweep, .a-halo, .a-spot, .a-cta, .a-title .ch, .a-title .redact, .a-title .redact::after, .a-dot::before, .a-dot::after { animation: none; }
+    .a-sweep { display: none; }
+    .a-card, .a-card.out { transform: none; transition: opacity .4s; }
+    .a-card.wipe .a-wipe { animation: none; }
+    .attract.leaving { animation: none; }
+  }
 </style>
 </head>
 <body data-screen="start">
@@ -263,12 +376,39 @@
   </section>
 </div>
 
+<!-- attract screen: shown on the touchscreen stand (?kiosk) at start and after a minute without a touch -->
+<div class="attract" id="attract" role="button" tabindex="-1" aria-label="Touch to play Which Council?" hidden>
+  <div class="a-wall" id="a-wall" aria-hidden="true"></div>
+  <div class="a-scrim" aria-hidden="true"></div>
+  <div class="a-sweep" aria-hidden="true"></div>
+  <div class="a-stage">
+    <img class="a-brand" src="Logo.png" alt="Public Alchemy">
+    <h2 class="a-title"><span class="a-word">Which</span><span class="redact" aria-hidden="true"></span><br><span class="a-word">Council?</span></h2>
+    <p class="a-sub">Every logo has its place name blacked out. Can you tell which council it belongs to?</p>
+    <div class="a-cta"><span class="a-dot" aria-hidden="true"></span>Touch to play</div>
+    <div class="a-spot" aria-hidden="true">
+      <div class="a-halo"></div>
+      <div class="a-card" id="a-card">
+        <div class="a-logo" id="a-logo"><img id="a-img" alt=""><div class="a-wipe"></div></div>
+        <div class="a-cap" id="a-cap">Which council is this?</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="a-burst" id="a-burst" aria-hidden="true"></div>
+
 <script src="data.js"></script>
 <script>
 const ROUND = 10;
 const $ = (id) => document.getElementById(id);
 const ALL = window.LOGOS || [];
-const settings = { mode: 'easy', region: 'all', tier: 'all', seconds: 60 };
+const settings = { mode: 'easy', region: 'all', tier: 'all', seconds: 60, pick: false };
+// Touchscreen stand: open with ?kiosk (or ?kiosk=90 to change the idle time in seconds).
+// One fixed game: a 60-second time trial on England's upper-tier councils, picking from four.
+const params = new URLSearchParams(location.search);
+const KIOSK = params.has('kiosk') && ALL.length > 0;
+const KIOSK_SETTINGS = { mode: 'trial', region: 'England', tier: 'upper', seconds: 60, pick: true };
+const picking = () => settings.mode === 'easy' || settings.pick;  // four options rather than typing
 const clampSecs = (v) => Math.min(600, Math.max(15, Math.round((+v || 60) / 5) * 5));
 let game = null;
 const seen = new Set();  // avoid repeats across rounds until the pool runs out
@@ -287,7 +427,7 @@ const pool = () => ALL.filter((l) => inScope(l, settings.region, settings.tier))
 const bestKey = () => {
   const tier = settings.tier === 'all' ? '' : `-${settings.tier}`;  // no suffix for "all" keeps earlier bests
   return settings.mode === 'trial'
-    ? `wc-best-trial-${settings.seconds}-${settings.region}${tier}`
+    ? `wc-best-trial${settings.pick ? '-pick' : ''}-${settings.seconds}-${settings.region}${tier}`
     : `wc-best-${settings.mode}-${settings.region}${tier}`;
 };
 const TIER_WORD = { upper: 'upper-tier ', lower: 'lower-tier ', all: '' };
@@ -335,6 +475,7 @@ function renderBest() {
   $('time-field').hidden = !trial;
   $('start').textContent = trial ? 'Start the clock' : 'Start round';
   $('best').innerHTML = b == null ? ''
+    : KIOSK ? `Best on this stand: <b>${plural(b, 'council')}</b>`
     : trial ? `Your best for ${settings.seconds} seconds here: <b>${plural(b, 'council')}</b>`
     : `Your best here: <b>${b} out of ${ROUND}</b>`;
 }
@@ -422,7 +563,7 @@ function ask() {
   $('fb').className = 'feedback';
   $('prompt').textContent = 'Which council is this?';
 
-  if (settings.mode === 'easy') {
+  if (picking()) {
     $('typed').hidden = true; $('choices').hidden = false;
     const opts = shuffle([q, ...distractors(q)]);
     $('choices').innerHTML = opts.map((o, i) =>
@@ -475,12 +616,8 @@ function answer(guessName) {
   $('bar').style.width = (100 * (game.i + 1) / game.qs.length) + '%';
 
   setImg(q.reveal);
-  if (settings.mode === 'easy') {
-    $('choices').querySelectorAll('.choice').forEach((b) => {
-      b.disabled = true;
-      if (b.dataset.name === q.name) b.classList.add('right');
-      else if (b.dataset.name === guessName) b.classList.add('wrong');
-    });
+  if (picking()) {
+    markChoices(q, guessName);
   } else {
     $('guess').disabled = true; $('sugg').innerHTML = '';
     $('skip').disabled = true; $('submit').disabled = true;
@@ -494,11 +631,23 @@ function answer(guessName) {
 }
 
 // Time trial: show the result briefly, then move straight on (the clock keeps running)
+function markChoices(q, guessName) {
+  $('choices').querySelectorAll('.choice').forEach((b) => {
+    b.disabled = true;
+    if (b.dataset.name === q.name) b.classList.add('right');
+    else if (b.dataset.name === guessName) b.classList.add('wrong');
+  });
+}
+
 function flashTrial(q, ok, guessName) {
   setImg(q.reveal);
-  $('guess').readOnly = true;  // readOnly rather than disabled keeps the phone keyboard open
-  $('sugg').innerHTML = '';
-  $('skip').disabled = true; $('submit').disabled = true;
+  if (picking()) {
+    markChoices(q, guessName);
+  } else {
+    $('guess').readOnly = true;  // readOnly rather than disabled keeps the phone keyboard open
+    $('sugg').innerHTML = '';
+    $('skip').disabled = true; $('submit').disabled = true;
+  }
   $('prompt').textContent = '';
   $('fb-h').textContent = ok ? (game.streak >= 3 ? `Correct! ${game.streak} in a row` : 'Correct!')
     : guessName == null ? `Skipped. It was ${q.name}` : `No — it was ${q.name}`;
@@ -542,7 +691,7 @@ function finishTrial() {
   let v = tried === 0 ? 'The clock ran out before you answered any.'
     : `You named ${s} of the ${plural(tried, 'logo')} you tried.`;
   if (prev != null && s > prev) v += ' New best!';
-  else if (prev != null) v += ` Your best for ${game.secs} seconds here is ${prev}.`;
+  else if (prev != null) v += KIOSK ? ` The best on this stand is ${prev}.` : ` Your best for ${game.secs} seconds here is ${prev}.`;
   $('verdict').textContent = v;
   renderRecap();
   show('s-end');
@@ -614,14 +763,22 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && $('s-end').classList.contains('on')) startRound();
     return;
   }
-  if (game.trial) return;  // time trial moves on by itself
-  if (game.answered && e.key === 'Enter') { e.preventDefault(); nextQ(); return; }
-  if (!game.answered && settings.mode === 'easy' && /^[1-4]$/.test(e.key)) {
+  if (!game.answered && picking() && /^[1-4]$/.test(e.key)) {
     const b = $('choices').children[+e.key - 1]; if (b) answer(b.dataset.name);
+    return;
   }
+  if (game.trial) return;  // time trial moves on by itself
+  if (game.answered && e.key === 'Enter') { e.preventDefault(); nextQ(); }
 });
 
-Object.assign(settings, store.get('wc-settings') || {});
+if (KIOSK) {
+  Object.assign(settings, KIOSK_SETTINGS);
+  document.body.classList.add('kiosk');
+  document.querySelector('.hero p').innerHTML = `Every logo has its place name blacked out. You have ${settings.seconds} seconds: `
+    + 'pick the right council from four options, as many times as you can. From <span id="total"></span>.';
+} else {
+  Object.assign(settings, store.get('wc-settings') || {}, { pick: false });
+}
 applySettings();
 bindSeg('mode', 'mode');
 bindSeg('region', 'region');
@@ -631,6 +788,118 @@ $('secs-up').onclick = () => setSecs(settings.seconds + 15);
 $('secs').addEventListener('change', () => setSecs($('secs').value));
 renderBest();
 if (!ALL.length) $('start').disabled = true, $('best').textContent = 'No logo data found — run tools/apply.py first.';
+
+// ----- attract screen for the touchscreen stand -----
+const IDLE_MS = Math.max(15, +params.get('kiosk') || 60) * 1000;
+const calm = matchMedia('(prefers-reduced-motion: reduce)');
+const attract = { built: false, asleep: false, waking: false, run: 0, pings: null, lastActive: Date.now() };
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+const preload = (src) => new Promise((r) => { const i = new Image(); i.onload = i.onerror = () => r(); i.src = src; });
+
+function buildAttract() {
+  if (attract.built) return;
+  attract.built = true;
+  const cols = 9, per = 12, picks = shuffle(ALL.slice());
+  $('a-wall').innerHTML = Array.from({ length: cols }, (_, c) => {
+    const tiles = Array.from({ length: per }, (_, k) => picks[(c * per + k) % picks.length])
+      .map((l) => `<div class="a-tile${l.dark_background ? ' dark' : ''}"><img src="${l.img}" alt="" decoding="async"></div>`).join('');
+    return `<div class="a-col"><div class="a-track" style="--dur:${70 + (c % 3) * 18}s">${tiles}${tiles}</div></div>`;
+  }).join('');
+  // Letters of the headline ripple in a wave
+  let i = 0;
+  document.querySelectorAll('.a-word').forEach((w) => {
+    w.innerHTML = [...w.textContent].map((ch) => `<span class="ch" style="--i:${i++}">${esc(ch)}</span>`).join('');
+  });
+}
+
+// The demo card: show a redacted logo, wipe the bar across it, reveal the original and type out the answer
+async function spotlight(run) {
+  const card = $('a-card'), img = $('a-img'), cap = $('a-cap'), live = () => run === attract.run;
+  while (live()) {
+    const q = ALL[Math.floor(Math.random() * ALL.length)];
+    await Promise.all([preload(q.img), preload(q.reveal)]);
+    if (!live()) return;
+    img.src = q.img;
+    $('a-logo').classList.toggle('dark', !!q.dark_background);
+    cap.className = 'a-cap'; cap.textContent = 'Which council is this?';
+    card.className = 'a-card reset'; void card.offsetWidth; card.className = 'a-card in';
+    await wait(2400); if (!live()) return;
+    card.classList.add('wipe');
+    await wait(calm.matches ? 0 : 430); if (!live()) return;
+    img.src = q.reveal;
+    cap.className = 'a-cap named'; cap.textContent = '';
+    for (const ch of q.name) { cap.textContent += ch; await wait(calm.matches ? 0 : 55); if (!live()) return; }
+    await wait(2600); if (!live()) return;
+    card.classList.add('out');
+    await wait(650);
+  }
+}
+
+// Every so often a tile on the wall gets a redaction bar swept across it
+function ping() {
+  const tiles = $('a-wall').getElementsByClassName('a-tile');
+  const t = tiles[Math.floor(Math.random() * tiles.length)];
+  if (!t) return;
+  t.style.setProperty('--y', (18 + Math.random() * 50) + '%');
+  t.classList.remove('ping'); void t.offsetWidth; t.classList.add('ping');
+}
+
+function sleep() {
+  if (attract.asleep) return;
+  stopClock();
+  if (document.activeElement) document.activeElement.blur();  // also closes an on-screen keyboard
+  $('sugg').innerHTML = '';
+  renderBest(); show('s-start'); window.scrollTo(0, 0);
+  buildAttract();
+  attract.asleep = true;
+  const el = $('attract');
+  document.body.classList.add('asleep');
+  el.classList.remove('leaving'); el.hidden = false; el.focus({ preventScroll: true });
+  spotlight(++attract.run);
+  if (!calm.matches) attract.pings = setInterval(ping, 600);
+}
+
+function wake(x, y) {
+  if (!attract.asleep || attract.waking) return;
+  attract.waking = true;
+  const el = $('attract');
+  if (!calm.matches) burst(x, y);
+  el.style.setProperty("--mx", x + "px"); el.style.setProperty("--my", y + "px");
+  el.classList.add('leaving');
+  setTimeout(() => {
+    el.hidden = true; el.classList.remove('leaving'); document.body.classList.remove('asleep');
+    attract.asleep = attract.waking = false;
+    attract.run++; clearInterval(attract.pings);
+    attract.lastActive = Date.now();
+  }, calm.matches ? 0 : 680);
+}
+
+function burst(x, y) {
+  const b = $('a-burst'), colours = ['var(--purple)', 'var(--violet)', 'var(--white)', 'var(--purple)'], n = 26;
+  b.style.left = x + 'px'; b.style.top = y + 'px';
+  b.innerHTML = '<i></i><i></i>' + Array.from({ length: n }, (_, k) =>
+    `<span style="--a:${(k / n) * 360 + Math.random() * 8}deg;--d:${16 + Math.random() * 30}vmax;--w:${2 + Math.random() * 6}vmax;--c:${colours[k % 4]}"></span>`).join('');
+  clearTimeout(b.t); b.t = setTimeout(() => { b.innerHTML = ''; }, 1000);
+}
+
+if (KIOSK) {
+  document.addEventListener('contextmenu', (e) => e.preventDefault());  // long-press menus on the touchscreen
+  for (const type of ['pointerdown', 'keydown', 'input', 'wheel']) {
+    window.addEventListener(type, () => { attract.lastActive = Date.now(); }, { capture: true, passive: true });
+  }
+  $('attract').addEventListener('pointerdown', (e) => { e.preventDefault(); wake(e.clientX, e.clientY); });
+  window.addEventListener('keydown', (e) => {
+    if (!attract.asleep) return;
+    e.preventDefault(); e.stopPropagation();
+    wake(innerWidth / 2, innerHeight / 2);
+  }, true);
+  setInterval(() => {
+    if (attract.asleep) return;
+    if (game && game.trial && !game.ended) attract.lastActive = Date.now();  // a running clock counts as play
+    if (Date.now() - attract.lastActive > IDLE_MS) sleep();
+  }, 1000);
+  sleep();
+}
 </script>
 </body>
 </html>
